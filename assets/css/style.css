@@ -232,6 +232,12 @@ article.active {
 
 .h3 { font-size: var(--fs-2); }
 
+.h3 p {
+   display: inline;
+   color: var(--light-gray);
+   font-size: var(--fs-7);
+}
+
 .h4 { font-size: var(--fs-4); }
 
 .h5 {
@@ -832,6 +838,12 @@ main {
 
 .timeline-ul li, .timeline-ol li{
   color: var(--light-gray-70);
+}
+
+.timeline-ul li a, .timeline-ol li a{
+  display: inline;
+  color: var(--light-gray-70);
+  text-decoration: underline;
 }
 
 .timeline-ol {

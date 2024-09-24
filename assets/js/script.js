@@ -174,36 +174,50 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 // Автоматический рассчёт времени
 
-// const currentDate = new Date();
-// const VIRGroupStart = new Date('2024-01-12');
+const currentDate = new Date();
+const VIRGroupStart = new Date('2024-01-12');
 
-// const allOtherWorkExperience = 3;
+const allOtherWorkExperience = 2;
 
-// function getFullMonthDifference(startDate, endDate) {
-//   let months;
-//   months = (endDate.getFullYear() - startDate.getFullYear()) * 12;
-//   months -= startDate.getMonth();
-//   months += endDate.getMonth();
+function getFullMonthDifference(startDate, endDate) {
+  let months;
+  months = (endDate.getFullYear() - startDate.getFullYear()) * 12;
+  months -= startDate.getMonth();
+  months += endDate.getMonth();
 
-//   // Если текущий день меньше указанного дня, уменьшаем число месяцев
-//   if (endDate.getDate() < startDate.getDate()) {
-//     months--;
-//   }
+  // Если текущий день меньше указанного дня, уменьшаем число месяцев
+  if (endDate.getDate() < startDate.getDate()) {
+    months--;
+  }
 
-//   return months <= 0 ? 0 : months; // Если результат меньше 0, выводим 0
-// }
+  return months <= 0 ? 0 : months; // Если результат меньше 0, выводим 0
+}
 
-// function getMonthsSpelling(date){
-//   switch ( date % 10 ){
-//     case 1: return 'месяц';
-//     case 2: return 'месяца';
-//     case 3: return 'месяца';
-//     case 4: return 'месяца';
-//     default: return 'месяцев';
-//   }
-// }
+function getMonthsSpelling(date){
+  var fulldate = "(";
+  var years = Math.floor(date / 12)
+  switch ( years ){
+    case 0: break;
+    case 1: fulldate += "1 год"; break;
+    case 2: fulldate += "2 года"; break;
+    case 3: fulldate += "3 года"; break;
+    case 4: fulldate += "4 года"; break;
+    default: fulldate += years + " лет"; break;
+  }
+  var months = date % 12;
+  if ( years != 0 && months != 0 ) fulldate += ', ';
+  switch ( months ){
+    case 0: return fulldate + ')';
+    case 1: return fulldate + months + ' месяц)';
+    case 2: return fulldate + months + ' месяца)';
+    case 3: return fulldate + months + ' месяца)';
+    case 4: return fulldate + months + ' месяца)';
+    case 11: return fulldate + months + ' месяцев)';
+    default: return fulldate + months + ' месяцев)';
+    }
+}
 
-// const monthDifference = getFullMonthDifference(VIRGroupStart, currentDate);
-// const fullWorkExperience = allOtherWorkExperience + monthDifference;
+const monthDifference = getFullMonthDifference(VIRGroupStart, currentDate);
+const fullWorkExperience = allOtherWorkExperience + monthDifference;
 
-// document.getElementById('fullWorkExperience').textContent = fullWorkExperience + " " + getMonthsSpelling(fullWorkExperience);
+document.getElementById('fullWorkExperience').textContent = getMonthsSpelling(fullWorkExperience);
