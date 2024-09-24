@@ -1925,6 +1925,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 .image-container {
   display: flex;
   justify-content: flex-start; /* Распределяет изображения равномерно по горизонтали */
+  flex-wrap: wrap;
   gap: 10px; /* Задает промежуток между изображениями */
 }
 
