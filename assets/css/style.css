@@ -830,17 +830,17 @@ main {
   box-shadow: 0 0 0 4px var(--jet);
 }
 
-.timeline-text, .timeline-ul, .timeline-ol {
+.timeline-text, .timeline-ul-tasks, .timeline-ul-achievements, .timeline-ol {
   color: var(--light-gray);
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
 
-.timeline-ul li, .timeline-ol li{
+.timeline-ul-tasks li, .timeline-ul-achievements li, .timeline-ol li{
   color: var(--light-gray-70);
 }
 
-.timeline-ul li a, .timeline-ol li a{
+.timeline-ul-tasks li a, .timeline-ul-achievements li a, .timeline-ol li a{
   display: inline;
   color: var(--light-gray-70);
   text-decoration: underline;
@@ -850,13 +850,17 @@ main {
   counter-set: list-item 0;
 }
 
-.timeline-ul li::before, .timeline-ol li::before {
+.timeline-ul-tasks li::before, .timeline-ol li::before {
   margin-right: 0.4em; /* Отступ между точкой и текстом */
   color: var(--light-gray-70); /* Цвет точки */
 }
 
-.timeline-ul li::before {
-  content: "—"; /* Большая точка перед каждым элементом списка */
+.timeline-ul-tasks li::before {
+  content: "-"; /* Большая точка перед каждым элементом списка */
+}
+
+.timeline-ul-achievements li::before {
+  content: "* "; /* Большая точка перед каждым элементом списка */
 }
 
 .timeline-ol li::before {
