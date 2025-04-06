@@ -50,8 +50,8 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 }
 
 // add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
+// modalCloseBtn.addEventListener("click", testimonialsModalFunc);
+// overlay.addEventListener("click", testimonialsModalFunc);
 
 
 
@@ -175,7 +175,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
 // Автоматический рассчёт времени
 
 const currentDate = new Date();
-const VIRGroupStart = new Date('2024-01-12');
+const VIRGroupStart = new Date('2024-01-15');
 
 const allOtherWorkExperience = 2;
 
