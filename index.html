@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Артём Высоцкий, Геймдизайнер</title>
+  <title data-i18n="tab_header"></title>
 
   <!--
     - favicon
@@ -43,13 +43,13 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets_mine/my_photo.png" alt="Артём Высоцкий" width="80">
+          <img src="./assets_mine/my_photo.png" alt="woah! an unloaded photo!" width="80">
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="Артём Высоцкий">Артём Высоцкий</h1>
+          <h1 class="name" title="Артём Высоцкий" data-i18n="name_surname"></h1>
 
-          <p class="title">Геймдизайнер</p>
+          <p class="title" data-i18n="game_designer"></p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -1290,22 +1290,19 @@
 
 
 
+  <!-- i18next и плагины -->
+  <script src="https://cdn.jsdelivr.net/npm/i18next@24.2.3/i18next.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@3.0.2/i18nextHttpBackend.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@8.0.4/i18nextBrowserLanguageDetector.min.js"></script>
 
+  <!-- custom js link -->
+  <script src="./assets/js/script.js"></script>
 
-  <!--
-    - custom js link
-  -->
-  <script defer src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
+  <!-- ionicon link -->
   <!-- <script type="module" defer src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule defer src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
   <script type="module" defer src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule defer src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
-  <!-- <script type="module" defer src="./assets_mine/ionicons 5_2_3/ionicons.esm.js"></script>
-  <script nomodule defer src="./assets_mine/ionicons 5_2_3/ionicons.js"></script> -->
 
 </body>
 

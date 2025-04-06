@@ -221,3 +221,43 @@ const monthDifference = getFullMonthDifference(VIRGroupStart, currentDate);
 const fullWorkExperience = allOtherWorkExperience + monthDifference;
 
 document.getElementById('fullWorkExperience').textContent = getMonthsSpelling(fullWorkExperience);
+
+
+
+// Работа с библиотекой i18next для локализации сайта
+
+i18next
+  .use(i18nextBrowserLanguageDetector)
+  .use(i18nextHttpBackend)
+  .init({
+    // Если язык не определён – используется английский по умолчанию
+    fallbackLng: 'en',
+    debug: true,
+    load: 'languageOnly', // Используем только код языка без региона
+    interpolation: {
+      escapeValue: false // позволяет вставлять HTML
+    },
+    detection: {
+      // Указываем порядок обнаружения, исключая localStorage и cookie
+      order: ['navigator'],
+      caches: [] // не кэшировать язык
+    },
+    backend: {
+      // Путь к файлам перевода.
+      loadPath: '/assets_mine/translations/translation_{{lng}}.json'
+    }
+  }, function(err, t) {
+    if (err) return console.error(err);
+    // После загрузки переводов обновляем содержимое сайта
+    console.log('Current language:', i18next.language);
+    updateContent();
+  });
+
+// Функция обновления текста на странице
+function updateContent() {
+  // Элементы, которым назначен атрибут data-i18n, будут заменены на перевод
+  document.querySelectorAll('[data-i18n]').forEach(function(elem) {
+    const key = elem.getAttribute('data-i18n');
+    elem.innerHTML = i18next.t(key);
+  });
+}
