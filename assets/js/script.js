@@ -244,7 +244,7 @@ i18next
     },
     backend: {
       // Путь к файлам перевода.
-      loadPath: '/assets_mine/translations/translation_{{lng}}.json'
+      loadPath: './assets_mine/translations/translation_{{lng}}.json'
     }
   }, function(err, t) {
     if (err) return console.error(err);
