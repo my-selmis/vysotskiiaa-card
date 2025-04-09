@@ -47,13 +47,13 @@
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="Артём Высоцкий" data-i18n="name_surname"></h1>
+          <h1 class="name" data-i18n="name_surname"></h1>
 
           <p class="title" data-i18n="game_designer"></p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
-          <span>Контакты</span>
+          <span data-i18n="contacts"></span>
 
           <ion-icon name="chevron-down"></ion-icon>
         </button>
@@ -79,9 +79,7 @@
             </div>
 
           </li> -->
-<!-- 
-          <li class="contact-item">
-
+          <!-- <li class="contact-item">
             <div class="icon-box">
               <ion-icon name="phone-portrait-outline"></ion-icon>
             </div>
@@ -101,11 +99,8 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Языки</p>
-
-              <a class="contact-link">
-                Русский, English (C1)
-              </a>
+              <p class="contact-title" data-i18n="languages_category"></p>
+              <a class="contact-link" data-i18n="languages"></a>
             </div>
 
           </li>
@@ -118,9 +113,9 @@
             </div>
             
             <div class="contact-info">
-              <p class="contact-title">Адрес</p>
+              <p class="contact-title" data-i18n="address_category"></p>
               
-              <address>Московская область, Россия</address>
+              <address data-i18n="address"></address>
             </div>
             
           </li>
@@ -132,9 +127,9 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Дата рождения</p>
+              <p class="contact-title" data-i18n="birthday_category">Дата рождения</p>
 
-              <time datetime="2001-07-11">11 июля, 2001 г</time>
+              <time datetime="2001-07-11" data-i18n="birthday"></time>
             </div>
 
           </li>
@@ -214,24 +209,12 @@
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>Резюме</button>
+            <button class="navbar-link  active" data-nav-link data-i18n="resume_category"></button>
           </li>
-
-          <!-- <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Резюме 2</button>
-          </li> -->
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Портфолио</button>
+            <button class="navbar-link" data-nav-link data-i18n="portfolio_category"></button>
           </li>
-
-          <!-- <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li> -->
-
-          <!-- <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li> -->
 
         </ul>
 
@@ -244,27 +227,21 @@
       <article class="about  active" data-page="about">
 
         <header>
-          <h2 class="h2 article-title">Обо мне</h2>
+          <h2 class="h2 article-title" data-i18n="about_category"></h2>
         </header>
 
         <section class="about-text">
-          <p>
-            Изучаю геймдизайн и декомпозирую игры с 2021 года. Придерживаюсь системного дизайна при разработке игр и практикую системный подход. Я люблю проектировать простые механики, которые создают интересные динамики, как монстры в "Lethal Company" или способности в последних "Zelda".
-          </p>
+          <p data-i18n="about_text_1"></p>
 
-          <p>
-            Увлекаюсь психологией, читаю про принципы поведения игроков и методики эффективного обучения. Также слежу за исследованиями в индустрии, например, "Мотивации игроков" от Quantic Foundry.
-          </p>
+          <p data-i18n="about_text_2"></p>
 
-          <p>
-            Имею опыт создания прототипов игр в нестандартных жанрах "puzzle-runner" и "action-typer".
-          </p>
+          <p data-i18n="about_text_3"></p>
 
         </section>
 
         <section class="service">
 
-          <h3 class="h3 service-title">Мои инструменты</h3>
+          <h3 class="h3 service-title" data-i18n="tools_category"></h3>
           
             <div class="image-container">
               <img src="./assets_mine/chatgpt-icon.png" alt="Chat GPT" title="Chat GPT">
@@ -288,7 +265,7 @@
 
         <section class="service">
 
-          <h3 class="h3 service-title">Мои компетенции</h3>
+          <h3 class="h3 service-title" data-i18n="aoe_category"></h3>
 
           <ul class="service-list">
 
@@ -299,11 +276,9 @@
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Аналитика</h4>
+                <h4 class="h4 service-item-title" data-i18n="aoe_analytics"></h4>
 
-                <p class="service-item-text">
-                  Анализирую игру и конкурентов,<br/>оцениваю игровые метрики
-                </p>
+                <p class="service-item-text" data-i18n="aoe_analytics_text"></p>
               </div>
 
             </li>
@@ -315,11 +290,9 @@
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Геймдизайн</h4>
+                <h4 class="h4 service-item-title" data-i18n="aoe_gamedesign"></h4>
 
-                <p class="service-item-text">
-                  Создаю игровые механики и системы, заполняю конфиги, настраиваю баланс
-                </p>
+                <p class="service-item-text" data-i18n="aoe_gamedesign_text"></p>
               </div>
 
             </li>
@@ -331,11 +304,9 @@
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Документация</h4>
+                <h4 class="h4 service-item-title" data-i18n="aoe_documentation"></h4>
 
-                <p class="service-item-text">
-                  Пишу и поддерживаю ГДД, подбираю референсы, проектирую макеты UI
-                </p>
+                <p class="service-item-text" data-i18n="aoe_documentation_text"></p>
               </div>
 
             </li>
@@ -347,11 +318,9 @@
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Организация</h4>
+                <h4 class="h4 service-item-title" data-i18n="aoe_management"></h4>
 
-                <p class="service-item-text">
-                  Структурирую рабочие процессы, ставлю  и контролирую задачи
-                </p>
+                <p class="service-item-text" data-i18n="aoe_management_text"></p>
               </div>
 
             </li>
@@ -361,7 +330,7 @@
         </section>
 
         <header>
-          <h2 class="h2 article-title">Резюме</h2>
+          <h2 class="h2 article-title" data-i18n="resume_category"></h2>
         </header>
 
         <section class="timeline">
@@ -371,102 +340,80 @@
               <ion-icon name="laptop-outline"></ion-icon>
             </div>
 
-              <h3 class="h3">Опыт работы <p id="fullWorkExperience"></p></h3>
+              <h3 class="h3" data-i18n="work_exp"></h3>
             </div>
             
             <ol class="timeline-list">
               
               <li class="timeline-item">
 
-                <h4 class="h4 timeline-item-title">VIR Group, Геймдизайнер</h4>
-                <span>Январь 2024 г — настоящее время</span>
+                <h4 class="h4 timeline-item-title" data-i18n="work_vir"></h4>
+                <span data-i18n="work_vir_date"></span>
 
-                <p class="timeline-text">
-                  Коммерческая разработка веб-игр в небольшой студии.
-                </p>
+                <p class="timeline-text" data-i18n="work_vir_text"></p>
 
-                <p class="timeline-text">
-                  Задачи:
-                </p>
+                <p class="timeline-text" data-i18n="work_responsibilities"></p>
                 <ul class="timeline-ul-tasks">
-                  <li>Аналитика</li>
-                  <li>Геймдизайн</li>
-                  <li>Документация</li>
-                  <li>Организация</li>
-                  <li>Презентация новых проектов и результатов анализа</li>
-                  <li>Проработка общего видения игры с руководителями студии</li>
+                  <li data-i18n="aoe_analytics"></li>
+                  <li data-i18n="aoe_gamedesign"></li>
+                  <li data-i18n="aoe_documentation"></li>
+                  <li data-i18n="aoe_management"></li>
+                  <li data-i18n="work_vir_responsibilities_1"></li>
+                  <li data-i18n="work_vir_responsibilities_2"></li>
                 </ul>
 
-                <p class="timeline-text">
-                  Достижения / показатели:
-                </p>
+                <p class="timeline-text" data-i18n="work_achievements"></p>
                 <ul class="timeline-ul-achievements">
-                  <li>С нуля организовал процессы команды по системе канбан</li>
-                  <li>Составил большую библиотеку мета-систем в казуальных мобильных и браузерных играх</li>
-                  <li>Все игры прошли модерацию на платформе CrazyGames</li>
+                  <li data-i18n="work_vir_achievements_1"></li>
+                  <li data-i18n="work_vir_achievements_2"></li>
+                  <li data-i18n="work_vir_achievements_3"></li>
                 </ul>
               
-                <p class="timeline-text">
-                  Проекты:
-                </p>
+                <p class="timeline-text" data-i18n="work_projects"></p>
                 <ol class="timeline-ol">
-                  <li>
-                    <a href="https://www.crazygames.com/game/fruit-balls-juicy-fusion?bypassCache=65zcn" target="_blank" rel="noreferrer">Fruit Balls</a> (casual)
-                  </li>
-                  <li><a href="https://yandex.com/games/app/361923" target="_blank" rel="noreferrer">Cool Kingdom</a>  (strategy)</li>
+                  <li><a href="https://www.crazygames.com/game/fruit-balls-juicy-fusion" target="_blank" rel="noreferrer">Fruit Balls</a> (casual)</li>
+                  <li><a href="https://www.crazygames.com/game/cool-kingdom" target="_blank" rel="noreferrer">Cool Kingdom</a>  (strategy)</li>
                 </ol>
 
               </li>
 
               <li class="timeline-item">
 
-                <h4 class="h4 timeline-item-title">Личный проект</h4>
-                <span>Декабрь 2023 г</span>
+                <h4 class="h4 timeline-item-title" data-i18n="work_pp"></h4>
+                <span data-i18n="work_pp2_date"></span>
 
-                <p class="timeline-text">
-                  Разработка прототипа игры и доработка её концепта с другом.
-                </p>
+                <p class="timeline-text" data-i18n="work_pp2_text"></p>
 
-                <p class="timeline-text">
-                  Задачи:
-                </p>
+                <p class="timeline-text" data-i18n="work_responsibilities"></p>
                 <ul class="timeline-ul-tasks">
-                  <li>Геймдизайн</li>
-                  <li>Организация</li>
-                  <li>Разработка игры в Unity на C#</li>
-                  <li>Проведение плейтестов</li>
+                  <li data-i18n="aoe_gamedesign"></li>
+                  <li data-i18n="aoe_management"></li>
+                  <li data-i18n="work_pp2_responsibilities_1"></li>
+                  <li data-i18n="work_pp2_responsibilities_2"></li>
                 </ul>
               
-                <p class="timeline-text">
-                  Проекты:
-                </p>
+                <p class="timeline-text" data-i18n="work_projects"></p>
                 <ol class="timeline-ol">
-                  <li>Spellcheck (action-typer)</li>
+                  <li data-i18n="work_pp2_projects_1"></li>
                 </ol>
 
               </li>
 
               <li class="timeline-item">
 
-                <h4 class="h4 timeline-item-title">Практика по профессии Геймдизайнер</h4>
-                <span>Июль 2023 г</span>
+                <h4 class="h4 timeline-item-title" data-i18n="work_gdpractice"></h4>
+                <span data-i18n="work_gdpractice_date"></span>
 
-                <p class="timeline-text">
-                  Самостоятельная разработка прототипа игры.
-                </p>
+                <p class="timeline-text" data-i18n="work_gdpractice_text"></p>
 
-                <p class="timeline-text">
-                  Задачи:
-                </p>
+                <p class="timeline-text" data-i18n="work_responsibilities"></p>
                 <ul class="timeline-ul-tasks">
-                  <li>Геймдизайн</li>
-                  <li>Документация</li>
-                  <li>Разработка игры в Unity на Unity Visual Scripting</li>
+                  <li data-i18n="aoe_gamedesign"></li>
+                  <li data-i18n="aoe_documentation"></li>
+                  <li data-i18n="work_gdpractice_responsibilities_1"></li>
                 </ul>
               
-                <p class="timeline-text">
-                  Проекты:
-                </p>
+                <p class="timeline-text" data-i18n="work_projects"></p>
                 <ol class="timeline-ol">
                   <li><a href="https://vysotskiiaa.itch.io/spellcheck-prototype?password=avportfolio" target="_blank" rel="noreferrer">Spellcheck, Prototype</a> (action-typer)</li>
                 </ol>
@@ -475,33 +422,25 @@
 
               <li class="timeline-item">
 
-                <h4 class="h4 timeline-item-title">GameBox - Геймдизайнер</h4>
-                <span>Май 2023 г</span>
+                <h4 class="h4 timeline-item-title" data-i18n="work_gamebox"></h4>
+                <span data-i18n="work_gamebox_date"></span>
 
-                <p class="timeline-text">
-                  Разработка игры в рамках геймджема от GameBox в небольшой команде.
-                </p>
+                <p class="timeline-text" data-i18n="work_gamebox_text"></p>
 
-                <p class="timeline-text">
-                  Задачи:
-                </p>
+                <p class="timeline-text" data-i18n="work_responsibilities"></p>
                 <ul class="timeline-ul-tasks">
-                  <li>Анализ</li>
-                  <li>Геймдизайн</li>
-                  <li>Документация</li>
-                  <li>Организация</li>
+                  <li data-i18n="aoe_analytics"></li>
+                  <li data-i18n="aoe_gamedesign"></li>
+                  <li data-i18n="aoe_documentation"></li>
+                  <li data-i18n="aoe_management"></li>
                 </ul>
               
-                <p class="timeline-text">
-                  Достижения / показатели:
-                </p>
+                <p class="timeline-text" data-i18n="work_achievements"></p>
                 <ul class="timeline-ul-achievements">
-                  <li>Игра заняла 17ое место из 107</li>
+                  <li data-i18n="work_gamebox_achievements_1"></li>
                 </ul>
               
-                <p class="timeline-text">
-                  Проекты:
-                </p>
+                <p class="timeline-text" data-i18n="work_projects"></p>
                 <ol class="timeline-ol">
                   <li><a href="https://vysotskiiaa.itch.io/my-little-home" target="_blank" rel="noreferrer">My Little Home</a> (survival-farm)</li>
                 </ol>
@@ -510,25 +449,19 @@
 
               <li class="timeline-item">
 
-                <h4 class="h4 timeline-item-title">Личный проект</h4>
-                <span>Июль 2022 г</span>
+                <h4 class="h4 timeline-item-title" data-i18n="work_pp"></h4>
+                <span data-i18n="work_pp1_date"></span>
 
-                <p class="timeline-text">
-                  Разработка прототипа игры в жанре puzzle-runner в небольшой команде.
-                </p>
+                <p class="timeline-text" data-i18n="work_pp1_text"></p>
 
-                <p class="timeline-text">
-                  Задачи:
-                </p>
+                <p class="timeline-text" data-i18n="work_responsibilities"></p>
                 <ul class="timeline-ul-tasks">
-                  <li>Геймдизайн</li>
-                  <li>Документация</li>
-                  <li>Организация</li>
+                  <li data-i18n="aoe_gamedesign"></li>
+                  <li data-i18n="aoe_documentation"></li>
+                  <li data-i18n="aoe_management"></li>
                 </ul>
               
-                <p class="timeline-text">
-                  Проекты:
-                </p>
+                <p class="timeline-text" data-i18n="work_projects"></p>
                 <ol class="timeline-ol">
                   <li><a href="https://vysotskiiaa.itch.io/laqueus?password=avportfolio" target="_blank" rel="noreferrer">Laqueus</a> (puzzle-runner)</li>
                 </ol>
@@ -546,40 +479,40 @@
               <ion-icon name="book-outline"></ion-icon>
             </div>
 
-            <h3 class="h3">Курсы</h3>
+            <h3 class="h3" data-i18n="courses"></h3>
           </div>
 
           <ol class="timeline-list">
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Геймдизайн. Полный Курс - Skillbox</h4>
+              <h4 class="h4 timeline-item-title" data-i18n="courses_sb_full"></h4>
 
-              <span>2023 г</span>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Геймдизайн. Документация - Skillbox</h4>
-
-              <span>2023 г</span>
+              <span data-i18n="courses_sb_full_date"></span>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Технические основы разработки игр - Skillbox</h4>
+              <h4 class="h4 timeline-item-title" data-i18n="courses_sb_documentation"></h4>
 
-              <span>2023 г</span>
+              <span data-i18n="courses_sb_documentation_date"></span>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Doing more with Google Sheets - Coursera</h4>
+              <h4 class="h4 timeline-item-title" data-i18n="courses_sb_techgamedev"></h4>
 
-              <span>2021 г</span>
+              <span data-i18n="courses_sb_techgamedev_date"></span>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title" data-i18n="courses_coursera_googlesheets"></h4>
+
+              <span data-i18n="courses_coursera_googlesheets_date"></span>
 
             </li>
 
@@ -594,20 +527,18 @@
               <ion-icon name="school-outline"></ion-icon>
             </div>
 
-            <h3 class="h3">Образование</h3>
+            <h3 class="h3" data-i18n="education"></h3>
           </div>
 
           <ol class="timeline-list">
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">МГТУ им. Н.Э. Баумана, Москва</h4>
+              <h4 class="h4 timeline-item-title" data-i18n="education_bauman"></h4>
 
-              <span>2019 г — 2021 г</span>
+              <span data-i18n="education_bauman_date"></span>
 
-              <p class="timeline-text">
-                Неоконченное высшее образование по специальности "Прикладная информатика".
-              </p>
+              <p class="timeline-text" data-i18n="education_bauman_text"></p>
 
             </li>
 
@@ -818,7 +749,7 @@
         - #RESUME
       -->
 
-      <article class="resume" data-page="resume">
+      <!-- <article class="resume" data-page="resume">
 
         <header>
           <h2 class="h2 article-title">Resume</h2>
@@ -886,7 +817,7 @@
 
         </section>
 
-      </article>
+      </article> -->
 
 
 
@@ -899,32 +830,27 @@
       <article class="portfolio" data-page="portfolio">
 
         <header>
-          <h2 class="h2 article-title">Портфолио</h2>
+          <h2 class="h2 article-title" data-i18n="portfolio_category"></h2>
         </header>
 
-        <section class="about-text">
-          <a style="color:hsl(12, 54%, 58%); font-style:italic; text-decoration: underline;" href="https://www.figma.com/board/U5ix7KtSEILgGPRo9OM6T6" target="_blank" rel="noreferrer">
-            Ссылка на развёрнутое портфолио в FigJam
-          </a>
+        <section class="about-text" data-i18n="portfolio_link"></section>
 
-        </section>
-
-        <h3 class="h3 service-title">Проекты</h3>
+        <h3 class="h3 service-title" data-i18n="projects_category"></h3>
 
         <section class="projects">
 
           <ul class="filter-list">
 
             <li class="filter-item">
-              <button class="active" data-filter-btn>Все</button>
+              <button class="active" data-filter-btn data-filter-key="projects_all" data-i18n="projects_all"></button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Коммерческая разработка</button>
+              <button data-filter-btn data-filter-key="projects_commercial" data-i18n="projects_commercial"></button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Личные проекты</button>
+              <button data-filter-btn data-filter-key="projects_pp" data-i18n="projects_pp"></button>
             </li>
 
           </ul>
@@ -933,7 +859,7 @@
 
             <button class="filter-select" data-select>
 
-              <div class="select-value" data-selecct-value>Категория</div>
+              <div class="select-value" data-select-value data-i18n="category"></div>
 
               <div class="select-icon">
                 <ion-icon name="chevron-down"></ion-icon>
@@ -944,15 +870,15 @@
             <ul class="select-list">
 
               <li class="select-item">
-                <button data-select-item>Все</button>
+                <button data-select-item data-filter-key="projects_all" data-i18n="projects_all"></button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Коммерческая разработка</button>
+                <button data-select-item data-filter-key="projects_commercial" data-i18n="projects_commercial"></button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Личные проекты</button>
+                <button data-select-item data-filter-key="projects_pp" data-i18n="projects_pp"></button>
               </li>
 
             </ul>
@@ -961,8 +887,8 @@
 
           <ul class="project-list">
 
-            <li class="project-item  active" data-filter-item data-category="коммерческая разработка">
-              <a href="https://yandex.com/games/app/361923" target="_blank" rel="noreferrer">
+            <li class="project-item  active" data-filter-item data-category-key="projects_commercial">
+              <a href="https://www.crazygames.com/game/cool-kingdom" target="_blank" rel="noreferrer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -979,8 +905,8 @@
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="коммерческая разработка">
-              <a href="https://www.crazygames.com/game/fruit-balls-juicy-fusion?bypassCache=65zcn" target="_blank" rel="noreferrer">
+            <li class="project-item  active" data-filter-item data-category-key="projects_commercial">
+              <a href="https://www.crazygames.com/game/fruit-balls-juicy-fusion" target="_blank" rel="noreferrer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -997,7 +923,7 @@
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="личные проекты">
+            <li class="project-item  active" data-filter-item data-category-key="projects_pp">
               <a href="https://vysotskiiaa.itch.io/spellcheck-prototype?password=avportfolio" target="_blank" rel="noreferrer">
 
                 <figure class="project-img">
@@ -1015,7 +941,7 @@
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="личные проекты">
+            <li class="project-item  active" data-filter-item data-category-key="projects_pp">
               <a href="https://vysotskiiaa.itch.io/my-little-home" target="_blank" rel="noreferrer">
 
                 <figure class="project-img">
@@ -1033,7 +959,7 @@
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="личные проекты">
+            <li class="project-item  active" data-filter-item data-category-key="projects_pp">
               <a href="https://vysotskiiaa.itch.io/laqueus?password=avportfolio" target="_blank" rel="noreferrer">
 
                 <figure class="project-img">

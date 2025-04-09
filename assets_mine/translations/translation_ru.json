@@ -1,6 +1,96 @@
 {
   "tab_header": "Артём Высоцкий, Геймдизайнер",
   "name_surname": "Артём Высоцкий",
-  "game_designer": "Геймдизайнер"
+  "game_designer": "Геймдизайнер",
+
+  "contacts": "Контакты",
+  "languages_category": "Языки",
+  "languages": "Русский, English (C1)",
+  "address_category": "Адрес",
+  "address": "Московская область, Россия",
+  "birthday_category": "Дата рождения",
+  "birthday": "11 июля, 2001 г",
+
+  "resume_category": "Резюме",
+  "portfolio_category": "Портфолио",
+
+  "about_category": "Обо мне",
+  "about_text_1": "Изучаю геймдизайн и декомпозирую игры с 2021 года. Придерживаюсь системного дизайна при разработке игр и практикую системный подход. Я люблю проектировать простые механики, которые создают интересные динамики, как монстры в \"Lethal Company\" или способности в последних \"Zelda\".",
+  "about_text_2": "Увлекаюсь психологией, читаю про принципы поведения игроков и методики эффективного обучения. Также слежу за исследованиями в индустрии, например, \"Мотивации игроков\" от Quantic Foundry.",
+  "about_text_3": "Имею опыт создания прототипов игр в нестандартных жанрах \"puzzle-runner\" и \"action-typer\".",
+
+  "tools_category": "Мои инструменты",
+  "aoe_category": "Мои компетенции",
+  "aoe_analytics": "Аналитика",
+  "aoe_analytics_text": "Анализирую игры и конкурентов,<br/>оцениваю игровые метрики",
+  "aoe_gamedesign": "Геймдизайн",
+  "aoe_gamedesign_text": "Создаю игровые механики и системы, заполняю конфиги, настраиваю баланс",
+  "aoe_documentation": "Документация",
+  "aoe_documentation_text": "Пишу и поддерживаю ГДД, подбираю референсы, проектирую макеты UI",
+  "aoe_management": "Менеджмент",
+  "aoe_management_text": "Структурирую рабочие процессы, ставлю  и контролирую задачи",
+
+  "work_exp": "Опыт работы <p id=\"fullWorkExperience\"></p>",
+  
+  "year_one": "{{count}} год",
+  "year_few": "{{count}} года",
+  "year_many": "{{count}} лет",
+  "month_one": "{{count}} месяц",
+  "month_few": "{{count}} месяца",
+  "month_many": "{{count}} месяцев",
+
+  "work_responsibilities": "Обязанности:",
+  "work_achievements": "Достижения / показатели:",
+  "work_projects": "Проекты:",
+
+  "work_vir": "VIR Group, Геймдизайнер",
+  "work_vir_date": "Январь 2024 г — настоящее время",
+  "work_vir_text": "Коммерческая разработка веб-игр в небольшой студии.",
+  "work_vir_responsibilities_1": "Презентация новых проектов и результатов анализа",
+  "work_vir_responsibilities_2": "Проработка общего видения игры с руководителями студии",
+  "work_vir_achievements_1":"С нуля организовал процессы команды по системе канбан",
+  "work_vir_achievements_2":"Составил большую библиотеку мета-систем в казуальных мобильных и браузерных играх",
+  "work_vir_achievements_3":"Все игры прошли модерацию на платформе CrazyGames",
+  "work_pp": "Личный проект",
+  "work_pp2_date": "Декабрь 2023 г",
+  "work_pp2_text": "Разработка прототипа игры и его доработка с другом.",
+  "work_pp2_responsibilities_1": "Разработка игры в Unity на C#",
+  "work_pp2_responsibilities_2": "Проведение плейтестов",
+  "work_pp2_projects_1": "Spellcheck (action-typer)",
+  "work_gdpractice": "Практика по профессии Геймдизайнер",
+  "work_gdpractice_date": "Июль 2023 г",
+  "work_gdpractice_text": "Самостоятельная разработка прототипа игры.",
+  "work_gdpractice_responsibilities_1": "Разработка игры в Unity на Unity Visual Scripting",
+  "work_gamebox": "GameBox Jam, Геймдизайнер",
+  "work_gamebox_date": "Май 2023 г",
+  "work_gamebox_text": "Разработка игры в небольшой команде в рамках геймджема от GameBox.",
+  "work_gamebox_achievements_1": "Игра заняла 17ое место из 107",
+  "work_pp1_date": "Июль 2022 г",
+  "work_pp1_text": "Разработка прототипа игры в жанре puzzle-runner в небольшой команде.",
+
+  "courses": "Курсы",
+
+  "courses_sb_full": "Геймдизайн. Полный Курс - Skillbox",
+  "courses_sb_full_date": "2023 г",
+  "courses_sb_documentation": "Геймдизайн. Документация - Skillbox",
+  "courses_sb_documentation_date": "2023 г",
+  "courses_sb_techgamedev": "Технические основы разработки игр - Skillbox",
+  "courses_sb_techgamedev_date": "2023 г",
+  "courses_coursera_googlesheets": "Doing more with Google Sheets - Coursera",
+  "courses_coursera_googlesheets_date": "2021 г",
+
+  "education": "Образование",
+
+  "education_bauman": "МГТУ им. Н.Э. Баумана, Москва",
+  "education_bauman_date": "2019 г — 2021 г",
+  "education_bauman_text": "Неоконченное высшее образование по специальности \"Прикладная информатика\".",
+
+  "portfolio_link": "<a href=\"https://www.figma.com/board/U5ix7KtSEILgGPRo9OM6T6\" target=\"_blank\" rel=\"noreferrer\">Ссылка на моё портфолио в FigJam</a>",
+
+  "projects_category": "Проекты",
+  "projects_all": "Все",
+  "projects_commercial": "Коммерческая разработка",
+  "projects_pp": "Личные проекты",
+  "category": "Категория"
 }
   

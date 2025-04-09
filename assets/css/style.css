@@ -384,11 +384,15 @@ main {
   z-index: -1;
 }
 
-.info_more-btn:hover,
+/* .info_more-btn:hover,
 .info_more-btn:focus { background: var(--bg-gradient-yellow-1); }
 
 .info_more-btn:hover::before,
-.info_more-btn:focus::before { background: var(--bg-gradient-yellow-2); }
+.info_more-btn:focus::before { background: var(--bg-gradient-yellow-2); } */
+
+.info_more-btn:hover { background: var(--bg-gradient-yellow-1); }
+
+.info_more-btn:hover::before { background: var(--bg-gradient-yellow-2); }
 
 .info_more-btn span { display: none; }
 
@@ -522,6 +526,12 @@ main {
 }
 
 .about-text p { margin-bottom: 15px; }
+
+.about-text a {
+  color:hsl(12, 54%, 58%);
+  font-style:italic;
+  text-decoration: underline;
+}
 
 
 

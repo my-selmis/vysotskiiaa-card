@@ -1,6 +1,94 @@
 {
   "tab_header": "Artem Vysotskii, Game Designer",
   "name_surname": "Artem Vysotskii",
-  "game_designer": "Game Designer"
+  "game_designer": "Game Designer",
+
+  "contacts": "Contacts",
+  "languages_category": "Languages",
+  "languages": "Russian, English (C1)",
+  "address_category": "Address",
+  "address": "Moscow region, Russia",
+  "birthday_category": "Date of Birth",
+  "birthday": "11 July, 2001",
+
+  "resume_category": "CV",
+  "portfolio_category": "Portfolio",
+
+  "about_category": "About me",
+  "about_text_1": "I have been learning game design and analysing games since 2021. I apply a systematic approach in game development and focus on systemic design. I favour creating simple mechanics from which emerge engaging dynamics similar to monsters in \"Lethal Company\" or abilities in the latest \"Zelda\" titles.",
+  "about_text_2": "I'm into psychology as I love exploring player behaviour or effective learning techniques. To add to that, I follow industry research, such as Quantic Foundry's \"Player Motivations\".",
+  "about_text_3": "Also, I have worked on games in unconventional genres, namely \"puzzle-runner\" and \"action-typer\".",
+
+  "tools_category": "My tools",
+  "aoe_category": "My areas of expertise",
+  "aoe_analytics": "Analytics",
+  "aoe_analytics_text": "Analysing games and competitors, assessing game metrics",
+  "aoe_gamedesign": "Game Design",
+  "aoe_gamedesign_text": "Creating game mechanics and systems, configuring balance",
+  "aoe_documentation": "Documentation",
+  "aoe_documentation_text": "Writing and maintaining GDDs, compiling references",
+  "aoe_management": "Management",
+  "aoe_management_text": "Organising work processes, assigning and overseeing tasks",
+
+  "work_exp": "Work experience <p id=\"fullWorkExperience\"></p>",
+  
+  "year_one": "{{count}} year",
+  "year_other": "{{count}} years",
+  "month_one": "{{count}} month",
+  "month_other": "{{count}} months",
+
+  "work_responsibilities": "Responsibilities:",
+  "work_achievements": "Achievements / highlights:",
+  "work_projects": "Projects:",
+
+  "work_vir": "VIR Group, Game Designer",
+  "work_vir_date": "January 2024 — present",
+  "work_vir_text": "Commercial web-game development in a small studio.",
+  "work_vir_responsibilities_1": "Presenting new projects and analysis results",
+  "work_vir_responsibilities_2": "Defining a common vision for the game with the studio owners",
+  "work_vir_achievements_1":"Organised the team's workflow from scratch using a kanban system",
+  "work_vir_achievements_2":"Compiled a large library of meta-systems in casual mobile and browser games",
+  "work_vir_achievements_3":"All games have passed moderation on the CrazyGames platform",
+  "work_pp": "Personal project",
+  "work_pp2_date": "December 2023",
+  "work_pp2_text": "Development and refinement of a game prototype with a friend.",
+  "work_pp2_responsibilities_1": "Game development in Unity with C#",
+  "work_pp2_responsibilities_2": "Conducting playtests",
+  "work_pp2_projects_1": "Spellcheck (action-typer)",
+  "work_gdpractice": "Practicum in the profession of a Game Designer",
+  "work_gdpractice_date": "July 2023",
+  "work_gdpractice_text": "Solo development of a game prototype.",
+  "work_gdpractice_responsibilities_1": "Game development in Unity with Unity Visual Scripting",
+  "work_gamebox": "GameBox Jam, Game Designer",
+  "work_gamebox_date": "May 2023",
+  "work_gamebox_text": "Game development with a small team for the GameBox Jam.",
+  "work_gamebox_achievements_1": "The game ranked 17th out of 107",
+  "work_pp1_date": "July 2022",
+  "work_pp1_text": "Development of a game prototype in the puzzle-runner genre with a small team.",
+
+  "courses": "Courses",
+
+  "courses_sb_full": "Game Design. Full Course - Skillbox",
+  "courses_sb_full_date": "2023",
+  "courses_sb_documentation": "Game Design. Documentation - Skillbox",
+  "courses_sb_documentation_date": "2023",
+  "courses_sb_techgamedev": "Technical foundations of game development - Skillbox",
+  "courses_sb_techgamedev_date": "2023",
+  "courses_coursera_googlesheets": "Doing more with Google Sheets - Coursera",
+  "courses_coursera_googlesheets_date": "2021",
+
+  "education": "Education",
+
+  "education_bauman": "Bauman MSTU, Moscow",
+  "education_bauman_date": "2019 — 2021",
+  "education_bauman_text": "Incomplete bachelor degree in \"Applied Computer Science\".",
+
+  "portfolio_link": "<a href=\"https://www.figma.com/board/XPaTVdLUe62mio4da3h8nV\" target=\"_blank\" rel=\"noreferrer\">Link to my portfolio in FigJam</a>",
+
+  "projects_category": "Projects",
+  "projects_all": "All",
+  "projects_commercial": "Сommercial development",
+  "projects_pp": "Personal projects",
+  "category": "Category"
 }
   

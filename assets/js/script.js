@@ -23,15 +23,15 @@ sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); }
 // const overlay = document.querySelector("[data-overlay]");
 
 // modal variable
-const modalImg = document.querySelector("[data-modal-img]");
-const modalTitle = document.querySelector("[data-modal-title]");
-const modalText = document.querySelector("[data-modal-text]");
+// const modalImg = document.querySelector("[data-modal-img]");
+// const modalTitle = document.querySelector("[data-modal-title]");
+// const modalText = document.querySelector("[data-modal-text]");
 
-// modal toggle function
-const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
-}
+// // modal toggle function
+// const testimonialsModalFunc = function () {
+//   modalContainer.classList.toggle("active");
+//   overlay.classList.toggle("active");
+// }
 
 // add click event to all modal items
 // for (let i = 0; i < testimonialsItem.length; i++) {
@@ -58,7 +58,7 @@ const testimonialsModalFunc = function () {
 // custom select variables
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
+const selectValue = document.querySelector("[data-select-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
 select.addEventListener("click", function () { elementToggleFunc(this); });
@@ -67,54 +67,88 @@ select.addEventListener("click", function () { elementToggleFunc(this); });
 for (let i = 0; i < selectItems.length; i++) {
   selectItems[i].addEventListener("click", function () {
 
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
+    // let selectedValue = this.innerText.toLowerCase();
+    // selectValue.innerText = this.innerText;
+    // elementToggleFunc(select);
+    // filterFunc(selectedValue);
+
+    // Получаем стабильный ключ фильтра из атрибута data-filter-key
+    let selectedKey = this.getAttribute("data-filter-key");
+    // Обновляем отображаемое значение селекта – берем перевод по ключу из data-i18n
+    selectValue.innerText = i18next.t(this.getAttribute("data-i18n"));
     elementToggleFunc(select);
-    filterFunc(selectedValue);
+    filterFunc(selectedKey);
 
   });
 }
 
-// filter variables
+// Элементы, которые нужно фильтровать (например, элементы проектов)
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
 // изменения для фильтров
 
-const filterFunc = function (selectedValue) {
+// const filterFunc = function (selectedValue) {
 
+//   for (let i = 0; i < filterItems.length; i++) {
+
+//     if (selectedValue === "все") {
+//       filterItems[i].classList.add("active");
+//     } else if (selectedValue === filterItems[i].dataset.category) {
+//       filterItems[i].classList.add("active");
+//     } else {
+//       filterItems[i].classList.remove("active");
+//     }
+
+//   }
+
+// }
+
+// конец изменений
+
+// Функция фильтрации: сравниваем выбранный стабильный ключ с ключом каждого элемента,
+// который хранится в data-category-key.
+const filterFunc = function (selectedKey) {
   for (let i = 0; i < filterItems.length; i++) {
-
-    if (selectedValue === "все") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
+    const itemKey = filterItems[i].getAttribute("data-category-key");
+    if (selectedKey === "projects_all" || selectedKey === itemKey) {
       filterItems[i].classList.add("active");
     } else {
       filterItems[i].classList.remove("active");
     }
-
   }
-
 }
 
-// конец изменений
-
 // add event in all filter button items for large screen
+// let lastClickedBtn = filterBtn[0];
+// for (let i = 0; i < filterBtn.length; i++) {
+
+//   filterBtn[i].addEventListener("click", function () {
+
+//     let selectedValue = this.innerText.toLowerCase();
+//     selectValue.innerText = this.innerText;
+//     filterFunc(selectedValue);
+
+//     lastClickedBtn.classList.remove("active");
+//     this.classList.add("active");
+//     lastClickedBtn = this;
+
+//   });
+
+// }
+
+// Обработка кликов по кнопкам фильтра для больших экранов.
+// Аналогичным способом получаем стабильные ключи.
 let lastClickedBtn = filterBtn[0];
-
 for (let i = 0; i < filterBtn.length; i++) {
-
   filterBtn[i].addEventListener("click", function () {
-
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    filterFunc(selectedValue);
+    let selectedKey = this.getAttribute("data-filter-key");
+    selectValue.innerText = i18next.t(this.getAttribute("data-i18n"));
+    filterFunc(selectedKey);
 
     lastClickedBtn.classList.remove("active");
     this.classList.add("active");
     lastClickedBtn = this;
-
   });
-
 }
 
 
@@ -146,8 +180,9 @@ const pages = document.querySelectorAll("[data-page]");
 
 const pageMap = {
   'Резюме': 'about',
-  'Резюме 2': 'resume',
-  'Портфолио': 'portfolio'
+  'CV': 'about',
+  'Портфолио': 'portfolio',
+  'Portfolio': 'portfolio'
 };
 
 for (let i = 0; i < navigationLinks.length; i++) {
@@ -172,12 +207,13 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
+
+
 // Автоматический рассчёт времени
 
-const currentDate = new Date();
-const VIRGroupStart = new Date('2024-01-15');
-
 const allOtherWorkExperience = 2;
+const VIRGroupStart = new Date('2024-01-15');
+const currentDate = new Date();
 
 function getFullMonthDifference(startDate, endDate) {
   let months;
@@ -193,34 +229,27 @@ function getFullMonthDifference(startDate, endDate) {
   return months <= 0 ? 0 : months; // Если результат меньше 0, выводим 0
 }
 
-function getMonthsSpelling(date){
-  var fulldate = "(";
-  var years = Math.floor(date / 12)
-  switch ( years ){
-    case 0: break;
-    case 1: fulldate += "1 год"; break;
-    case 2: fulldate += "2 года"; break;
-    case 3: fulldate += "3 года"; break;
-    case 4: fulldate += "4 года"; break;
-    default: fulldate += years + " лет"; break;
+function getFormattedDuration(totalMonths) {
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+  const parts = [];
+
+  if (years > 0) {
+    // i18next автоматически выбирает нужную форму по значению count
+    parts.push(i18next.t('year', { count: years }));
   }
-  var months = date % 12;
-  if ( years != 0 && months != 0 ) fulldate += ', ';
-  switch ( months ){
-    case 0: return fulldate + ')';
-    case 1: return fulldate + months + ' месяц)';
-    case 2: return fulldate + months + ' месяца)';
-    case 3: return fulldate + months + ' месяца)';
-    case 4: return fulldate + months + ' месяца)';
-    case 11: return fulldate + months + ' месяцев)';
-    default: return fulldate + months + ' месяцев)';
-    }
+  if (months > 0) {
+    parts.push(i18next.t('month', { count: months }));
+  }
+  return '(' + parts.join(', ') + ')';
 }
 
-const monthDifference = getFullMonthDifference(VIRGroupStart, currentDate);
-const fullWorkExperience = allOtherWorkExperience + monthDifference;
-
-document.getElementById('fullWorkExperience').textContent = getMonthsSpelling(fullWorkExperience);
+// Обновляем отображение опыта на странице
+function updateWorkExperience() {
+  const monthDifference = getFullMonthDifference(VIRGroupStart, currentDate);
+  const fullWorkExperience = allOtherWorkExperience + monthDifference;
+  document.getElementById('fullWorkExperience').textContent = getFormattedDuration(fullWorkExperience);
+}
 
 
 
@@ -251,6 +280,7 @@ i18next
     // После загрузки переводов обновляем содержимое сайта
     console.log('Current language:', i18next.language);
     updateContent();
+    updateWorkExperience();
   });
 
 // Функция обновления текста на странице
