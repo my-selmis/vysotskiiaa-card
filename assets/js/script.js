@@ -287,8 +287,17 @@ i18next
 // Функция обновления текста на странице
 function updateContent() {
   // Элементы, которым назначен атрибут data-i18n, будут заменены на перевод
+  // Текстовое содержимое
   document.querySelectorAll('[data-i18n]').forEach(function(elem) {
     const key = elem.getAttribute('data-i18n');
     elem.innerHTML = i18next.t(key);
+  });
+
+  // Ссылки: перевод подставляется в атрибут href
+  document.querySelectorAll('[data-i18n-href]').forEach(function (elem) {
+    const key = elem.getAttribute('data-i18n-href');
+    if (i18next.exists(key)) {
+      elem.setAttribute('href', i18next.t(key));
+    }
   });
 }

@@ -145,10 +145,18 @@
 
   "portfolio_link": "<a href=\"https://www.figma.com/board/XPaTVdLUe62mio4da3h8nV\" target=\"_blank\" rel=\"noreferrer\">Link to my portfolio in FigJam</a>",
 
-  "projects_category": "Projects",
+  "projects_category": "My projects",
   "projects_all": "All",
   "projects_commercial": "Сommercial development",
   "projects_pp": "Personal projects",
-  "category": "Category"
+  "category": "Category",
+
+  "project_r_url": "https://www.figma.com/board/XPaTVdLUe62mio4da3h8nV/?node-id=4089-320&t=vlTE8VdommNJZr3C-4",
+  "moonshards_url": "https://www.figma.com/board/XPaTVdLUe62mio4da3h8nV/?node-id=4091-330&t=vlTE8VdommNJZr3C-4",
+  "cool_king_url": "https://www.figma.com/board/XPaTVdLUe62mio4da3h8nV/?node-id=4091-340&t=vlTE8VdommNJZr3C-4",
+  "fruit_balls_url": "https://www.figma.com/board/XPaTVdLUe62mio4da3h8nV/?node-id=4091-346&t=vlTE8VdommNJZr3C-4",
+  "spellcheck_url": "https://www.figma.com/board/XPaTVdLUe62mio4da3h8nV/?node-id=4091-352&t=vlTE8VdommNJZr3C-4",
+  "my_little_home_url": "https://www.figma.com/board/XPaTVdLUe62mio4da3h8nV/?node-id=4091-358&t=vlTE8VdommNJZr3C-4",
+  "laqueus_url": "https://www.figma.com/board/XPaTVdLUe62mio4da3h8nV/?node-id=4091-364&t=vlTE8VdommNJZr3C-4"
 }
   
