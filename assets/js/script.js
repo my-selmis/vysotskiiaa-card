@@ -213,7 +213,8 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 const allOtherWorkExperience = 2;
 const experienceDateStart = new Date('2024-01-15');
-const currentDate = new Date();
+// const currentDate = new Date(); // сегодняшняя дата
+const currentDate = new Date('2026-06-15');
 
 function getFullMonthDifference(startDate, endDate) {
   let months;
