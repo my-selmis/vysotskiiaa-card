@@ -26,10 +26,13 @@
     "My core competencies:",
     "analyse the market: competitors, audience, trends",
     "define the game's market strategy and positioning",
-    "define, maintain, and evolve the vision for the game and the cohesive gaming experience",
-    "design core and meta mechanics, scalable game systems, and engaging gameplay loops",
+    "define and evolve the vision for the game",
+    "design scalable game systems and engaging gameplay loops",
     "configure game balance, progression, and economy (both mathematically and by feel)",
     "write gd-documentation: from technical specifications to product documentation",
+    "analyse metrics, player feedback, test fun and UX",
+    "formulate data-informed improvement hypotheses",
+    
     "analyse metrics and funnels; formulate data-informed improvement hypotheses",
     "analyse player and community feedback; formulate data-informed improvement hypotheses",
     "analyse games from a fun and UX perspective; formulate improvement hypotheses",
@@ -69,15 +72,16 @@
   "work_aegate_text": "A small private game studio and startup. I was the main Game Designer on an unannounced mobile Action RPG (midcore).",
   "work_aegate_results": [
     "My contributions:",
-    "analysed over 20 potential competitors and defined the project's market positioning",
-    "defined the value proposition and target audience through player archetypes and their motivations",
+    "analysed competitors and defined the project's market positioning",
     "developed the game vision, defined the project's scope and iteration plan",
     "wrote product gd-documentation: vision, feature list, and roadmap",
     "wrote technical and conceptual gd-documentation",
     "designed gameplay mechanics, tested and configured them in Unity",
-    "created levels and configured abilities+VFX, enemies+behavior -- all in Unity",
-    "conducted over 5 playtests across different iterations to improve the game and its balance",
+    "created and configured levels, abilities, enemies -- all in Unity",
     "designed the UX and created UI wireframes",
+    "conducted playtests at every iteration to improve the game and its balance",
+    
+    "defined the value proposition and target audience through player archetypes and their motivations",
     "established a process for task planning and review within the team"
 ],
 
@@ -96,8 +100,9 @@
     "designed gameplay mechanics for 3 projects and configured them in Unity",
     "balanced all 3 projects (fairly well)",
     "designed the UX and created UI wireframes for 2 projects",
-    "established a process for task planning and review within the team",
-    "built an extensive internal library of meta-systems"
+    "built an extensive internal library of meta-systems",
+
+    "established a process for task planning and review within the team"
   ],
 
 
