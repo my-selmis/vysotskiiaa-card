@@ -21,7 +21,10 @@
 
   "about_text2_1o": "I just love games! I have extensive gaming experience across all major platforms and in most genres, from casual to hardcore. I highly value player feedback, but also understand the games' business goals. I care about healthy team relationships, know how to resolve conflicts and find common ground. I base my reasoning on constructive arguments and can communicate my ideas clearly. I respect and practice a systematic approach to design and development (and life as well). My credo is: \"lead with wonder, shape with reason.\" Skill-wise, I'm a generalist and can also take on the role of a Product Manager.",
 
-  "about_text2_1": "I just love games! I have extensive gaming experience across a wide range of genres, from casual to hardcore, on PC and mobile. I highly value player feedback, but also understand studios' business goals. I practice a product-oriented and systemic approach in my work (and in life as well). Skill-wise, I'm a Generalist and a Feature/Product Owner, covering the full development cycle: concept, documentation, support, configuration, testing, iteration, and post-analysis.<br>My credo is: \"lead with wonder, shape with reason\"!",
+  "about_text2_1": [
+    "I just love games! I have extensive gaming experience across a wide range of genres, from casual to hardcore, on PC and mobile. I practice a product-oriented and systemic approach in my work (and in life as well). Skill-wise, I'm a Generalist and a Feature/Product Owner, covering the full development cycle: concept, documentation, support, configuration, testing, iteration, and post-analysis.",
+    "My credo is: <i>Lead with wonder, Shape with reason!</i>"
+  ],
   "about_text2_2": [
     "My core competencies:",
     "analyse the market: competitors, audience, trends",
@@ -68,7 +71,7 @@
 
 
 "work_aegate": "Aetherium Gate, Game Designer",
-  "work_aegate_date": "May 2025 — June 2026",
+  "work_aegate_date": "August 2025 — June 2026",
   "work_aegate_text": "A small private game studio and startup. I was the main Game Designer on an unannounced mobile Action RPG (midcore).",
   "work_aegate_results": [
     "My contributions:",
@@ -86,10 +89,8 @@
 ],
 
 
-
-
   "work_vir": "VIR Group, Game Designer",
-  "work_vir_date": "January 2024 — November 2025",
+  "work_vir_date": "January 2024 — September 2025",
   "work_vir_text": "A small commercial web and mobile game development studio. As the main Game Designer, I led and shipped three projects at the studio.",
   "work_vir_results": [
     "My key contributions:",

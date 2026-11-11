@@ -84,6 +84,7 @@
   --fs-5: 15px;
   --fs-6: 14px;
   --fs-7: 13px;
+  --fs-7-1: 12px;
   --fs-8: 11px;
 
   /* font-weight */
@@ -523,6 +524,12 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
+}
+
+.about-text-ATSskills {
+  color: var(--light-gray-70);
+  font-size: var(--fs-7-1);
+  font-style: italic;
 }
 
 /* .about-text p { margin-bottom: 15px; } */
@@ -1376,6 +1383,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     --fs-4: 18px;
     --fs-6: 15px;
     --fs-7: 15px;
+    --fs-7-1: 14px;
     --fs-8: 12px;
 
   }

@@ -211,7 +211,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 // Автоматический рассчёт времени
 
-const allOtherWorkExperience = 2;
+const allOtherWorkExperience = 1;
 const experienceDateStart = new Date('2024-01-15');
 // const currentDate = new Date(); // сегодняшняя дата
 const currentDate = new Date('2026-06-15');
