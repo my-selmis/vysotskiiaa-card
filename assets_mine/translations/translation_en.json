@@ -72,9 +72,17 @@
 
 "work_aegate": "Aetherium Gate, Game Designer",
   "work_aegate_date": "August 2025 — June 2026",
-  "work_aegate_text": "A small private game studio and startup. I was the main Game Designer on an unannounced mobile Action RPG (midcore).",
-  "work_aegate_results": [
-    "My contributions:",
+  "work_aegate_text": "A small private game studio and startup. I worked as head Game Designer on an unannounced Mobile Action RPG. I was responsible for the main design decisions and worked closely with the management team on the overall vision of the game.",
+  "work_aegate_project_r": [
+    "My key contributions to <i>Project R</i> (midcore, action rpg):",
+    "Designed the core gameplay loop, combat, and a deep system of abilities and attributes",
+    "Created and configured content in Unity: locations, abilities, enemies/bosses and their behaviour",
+    "Designed shader requirements tailored to the specifics of a 2.5D game",
+    "Designed and validated a new, easy-to-use control scheme for a mobile action rpg",
+    "Developed the game’s market positioning: attract and retain factors, the TA’s motivations",
+    "Compiled a feature-list and a roadmap covering the full development through to release and beyond",
+    
+    "Designed and configured the behaviour models for regular enemies, elites, and bosses",
     "analysed competitors and defined the project's market positioning",
     "developed the game vision, defined the project's scope and iteration plan",
     "wrote product gd-documentation: vision, feature list, and roadmap",
@@ -83,15 +91,42 @@
     "created and configured levels, abilities, enemies -- all in Unity",
     "designed the UX and created UI wireframes",
     "conducted playtests at every iteration to improve the game and its balance",
-    
     "defined the value proposition and target audience through player archetypes and their motivations",
     "established a process for task planning and review within the team"
-],
+  ],
+  "work_aegate_other": [
+    "Internal initiatives:",
+    "Set up the process for setting and tracking tasks within the team, based on Kanban"
+  ],
 
 
   "work_vir": "VIR Group, Game Designer",
   "work_vir_date": "January 2024 — September 2025",
-  "work_vir_text": "A small commercial web and mobile game development studio. As the main Game Designer, I led and shipped three projects at the studio.",
+  "work_vir_text": "A small commercial web and mobile game development studio. At the studio, I led and successfully shipped three projects as head Game Designer, taking responsibility for the main design decisions: from market analysis and concept to testing and fine-tuning in Unity.",
+  "work_vir_moonshards":[
+    "My key contributions to <i>Moonshards -- IDLE RPG</i> (midcore, idle rpg):",
+    "Designed the combat system, as well as ability, stat and item systems",
+    "Created and configured content: abilities, items, pets, enemies, and locations",
+    "Developed a mathematical model for the game economy, progression pace, and difficulty",
+    "Formulated the FTUE: introduction to the game, tutorial, first objectives and early progression"
+  ],
+  "work_vir_cool_kingdom":[
+    "My key contributions to <i>Cool Kingdom</i> (casual, strategy):",
+    "Designed a flexible and scalable system of dialogues/quests, created content for it",
+    "Came up with the design and personalities of the characters, drew up the briefs for the artists",
+    "The game received high ratings from players (9.3 on CrazyGames) for its design and gameplay",
+    ""
+  ],
+  "work_vir_fruit_balls":[
+    "My key contributions to <i>Fruit Balls</i> (casual, suika):",
+    "Deconstructed the Suika Game genre, analysed the competitors and identified the best solutions",
+    "Came up with the designs for the objects and levels, drew up the briefs for the artists"
+  ],
+  "work_vir_other":[
+    "Internal initiatives:",
+    "Compiled an extensive library of 30+ meta-systems in mobile games, classifying them by type, cost, prevalence and potential value",
+    "Set up the process for setting and tracking tasks within the team, based on Kanban"
+  ],
   "work_vir_results": [
     "My key contributions:",
     "analysed the market and defined the positioning for 2 projects",
@@ -102,7 +137,6 @@
     "balanced all 3 projects (fairly well)",
     "designed the UX and created UI wireframes for 2 projects",
     "built an extensive internal library of meta-systems",
-
     "established a process for task planning and review within the team"
   ],
 

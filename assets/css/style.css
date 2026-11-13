@@ -904,13 +904,19 @@ main {
   line-height: 1.6;
 }
 
+.timeline-text a{
+  color: inherit;
+  display: inline;
+  text-decoration: underline;
+}
+
 .timeline-ul-tasks li, .timeline-ul-achievements li, .timeline-ol li{
   color: var(--light-gray-70);
 }
 
 .timeline-ul-tasks li a, .timeline-ul-achievements li a, .timeline-ol li a{
+  color: inherit;
   display: inline;
-  color: var(--light-gray-70);
   text-decoration: underline;
 }
 
