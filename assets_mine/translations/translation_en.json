@@ -106,15 +106,17 @@
   "work_vir_moonshards":[
     "My key contributions to <i>Moonshards -- IDLE RPG</i> (midcore, idle rpg):",
     "Designed the combat system, ability and item systems, the gacha-system",
-    "Created and configured content: abilities, items, pets, enemies, and locations",
     "Developed a mathematical model for the game economy, progression pace, and difficulty",
-    "Formulated the FTUE: introduction to the game, tutorial, first objectives and early progression"
+    "Formulated the FTUE: introduction to the game, tutorial, first objectives and early progression",
+    "Created and configured content: abilities, items, pets, enemies, and locations",
+    ""
   ],
   "work_vir_cool_kingdom":[
     "My key contributions to <i>Cool Kingdom</i> (casual, strategy):",
     "Designed a flexible and scalable system of dialogues/quests, wrote the text for them",
+    "The game received high ratings from players (9.3/10 on CrazyGames) for its design and gameplay",
+    "Implemented native rewarded-ads, which achieved a conversion rate of 47.65%, with an average of 9.89 rewarded-ads per active player following conversion",
     "Came up with the design and personalities of the characters, drew up the briefs for the artists",
-    "The game received high ratings from players (9.3 on CrazyGames) for its design and gameplay",
     ""
   ],
   "work_vir_fruit_balls":[
