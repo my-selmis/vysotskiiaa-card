@@ -204,6 +204,40 @@
   "fruit_balls_url": "https://www.figma.com/board/U5ix7KtSEILgGPRo9OM6T6?node-id=2235-260&t=CmkSB0wua8SFkhAV-4",
   "spellcheck_url": "https://www.figma.com/board/U5ix7KtSEILgGPRo9OM6T6?node-id=2235-261&t=CmkSB0wua8SFkhAV-4",
   "my_little_home_url": "https://www.figma.com/board/U5ix7KtSEILgGPRo9OM6T6?node-id=2235-262&t=CmkSB0wua8SFkhAV-4",
-  "laqueus_url": "https://www.figma.com/board/U5ix7KtSEILgGPRo9OM6T6?node-id=2235-263&t=CmkSB0wua8SFkhAV-4"
+  "laqueus_url": "https://www.figma.com/board/U5ix7KtSEILgGPRo9OM6T6?node-id=2235-263&t=CmkSB0wua8SFkhAV-4",
+
+
+
+  
+  "pm_genre": "Жанр",
+  "pm_platform": "Платформа",
+  "pm_dev_time": "Время разработки",
+  "pm_description": "Описание:",
+  "pm_main_tasks": "Основные задачи на проекте",
+  "pm_details": "Задачи более подробно:",
+  "pm_link_game": "ссылка на игру",
+  "pm_link_trailer": "трейлер игры",
+  "pm_link_gameplay": "видео геймплея",
+
+  "project_r_genre": "Midcore, Action RPG",
+  "project_r_platform": "Mobile",
+  "project_r_dev_time": "1 год (2025–2026 г)",
+  "project_r_description": "Неанонсированная гача-игра с пиксельной графикой. Целью проекта было сделать мобильную Action-RPG с глубоким геймплеем для более вовлечённой аудитории.",
+  "project_r_tasks": [
+    "Проанализировал конкурентов и создал <b>видение</b> конкурентноспособной игры",
+    "Спроектировал масштабируемые <b>игровые системы</b> и их механики",
+    "Написал всю <b>документацию</b> проекта: продуктовую, концептуальную, техническую",
+    "Провёл множество плейтестов, настроил <b>баланс</b> сложности и фана",
+    "Создал и настроил в Unity <b>уровни</b>, <b>способности</b>, рядовых <b>противников</b> и боссов"
+  ],
+  "project_r_details": [
+    "Вместе с руководителями сформировал и развил общее видение проекта",
+    "Изучил потребности фанатов жанра и составил портрет ЦА",
+    "Разбил тестирование дизайна на несколько итераций, начиная с прототипа, составил роадмапу",
+    "Создал основную модель управления, спроектировал все UX-вайрфреймы",
+    "Досконально протестировал игру, нашёл и задокументировал свыше 100 багов",
+    "Настроил VFX всех атак и способностей"
+  ]
+
 }
   
