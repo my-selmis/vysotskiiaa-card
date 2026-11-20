@@ -1590,6 +1590,20 @@ body.modal-open { overflow: hidden; }
 
 .pm-cover { aspect-ratio: 16 / 9; }
 .pm-shot { aspect-ratio: 16 / 10; }
+img.pm-shot {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+video.pm-shot {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
 
 .pm-link {
   display: flex;

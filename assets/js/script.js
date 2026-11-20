@@ -243,6 +243,25 @@ const projectModalTriggers = document.querySelectorAll("[data-modal-target]");
 let lastProjectModalTrigger = null;
 let currentProjectModalKey = null;
 
+const configureProjectVideo = function (video) {
+  video.controls = true;
+  video.muted = true;
+  video.loop = true;
+  video.playsInline = true;
+  video.preload = "none";
+  video.setAttribute("controlsList", "nodownload noremoteplayback");
+  video.setAttribute("disablePictureInPicture", "");
+};
+
+const unloadProjectVideo = function (video) {
+  video.pause();
+  video.currentTime = 0;
+  video.removeAttribute("src");
+  video.load();
+};
+
+projectModalContainer.querySelectorAll(".pm-demo-video").forEach(configureProjectVideo);
+
 // если иконка не загрузилась (например, нет файла), просто прячем её
 projectModalIcon.addEventListener("error", function () { projectModalIcon.hidden = true; });
 
@@ -288,9 +307,19 @@ const openProjectModal = function (key) {
     projectModalIcon.hidden = true;
   }
 
-  // видео запускаем только при открытии
-  content.querySelectorAll("video[data-autoplay]").forEach(function (v) {
-    v.play().catch(function () {});
+  // Не загружаем ролики из предыдущего проекта.
+  projectModalContainer.querySelectorAll("video").forEach(function (video) {
+    if (!content.contains(video)) unloadProjectVideo(video);
+  });
+
+  // Назначаем src только роликам активной модалки.
+  content.querySelectorAll("video[data-src]").forEach(function (video) {
+    configureProjectVideo(video);
+    const source = video.getAttribute("data-src");
+    if (video.getAttribute("src") !== source) {
+      video.src = source;
+      video.load();
+    }
   });
 
   projectModalContainer.classList.add("active");
@@ -309,7 +338,7 @@ const closeProjectModal = function () {
   projectModalContainer.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
 
-  projectModalContainer.querySelectorAll("video").forEach(function (v) { v.pause(); });
+  projectModalContainer.querySelectorAll("video").forEach(unloadProjectVideo);
 
   currentProjectModalKey = null;
   if (lastProjectModalTrigger) lastProjectModalTrigger.focus();
