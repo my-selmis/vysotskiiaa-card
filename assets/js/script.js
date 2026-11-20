@@ -178,32 +178,52 @@ for (let i = 0; i < filterBtn.length; i++) {
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
-const pageMap = {
-  'Резюме': 'about',
-  'CV': 'about',
-  'Портфолио': 'portfolio',
-  'Portfolio': 'portfolio'
+// Показывает вкладку по имени (значение атрибута data-page).
+// Возвращает false, если такой вкладки нет.
+const showPage = function (pageName, scrollToTop) {
+  const activePage = document.querySelector('[data-page="' + pageName + '"]');
+  if (!activePage) return false;
+
+  pages.forEach(function (page) {
+    page.classList.toggle("active", page === activePage);
+  });
+  navigationLinks.forEach(function (link) {
+    link.classList.toggle("active", link.getAttribute("data-page-target") === pageName);
+  });
+
+  if (scrollToTop) window.scrollTo(0, 0);
+  return true;
+};
+
+// Адреса (hash), которые понимает сайт:
+//   (пусто) или #resume          - вкладка "Резюме" (по умолчанию)
+//   #portfolio                   - вкладка "Портфолио"
+//   #portfolio/project_r         - "Портфолио" с открытой модалкой проекта project_r
+// Ключ проекта - значение атрибута data-modal-target. После публикации ссылок его лучше не менять.
+const DEFAULT_PAGE = "about";
+const PAGE_BY_SLUG = { resume: "about", about: "about", portfolio: "portfolio" };
+const SLUG_BY_PAGE = { about: "resume", portfolio: "portfolio" };
+
+// Меняет адрес без перезагрузки страницы: push - новая запись истории, иначе замена текущей.
+// Если history API недоступен, откатываемся на location.hash.
+const setRoute = function (hash, state, push) {
+  const url = hash || location.pathname + location.search;
+  try {
+    if (push) history.pushState(state, "", url);
+    else history.replaceState(state, "", url);
+  } catch (e) {
+    if (push) location.hash = hash;
+    else location.replace(hash || "#");
+  }
 };
 
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
-    const selectedPage = pageMap[this.innerHTML];
+    const pageName = this.getAttribute("data-page-target");
+    if (!showPage(pageName, true)) return;
 
-    // Удаляем класс active у всех страниц и кнопок
-    for (let j = 0; j < pages.length; j++) {
-      pages[j].classList.remove("active");
-    }
-    for (let k = 0; k < navigationLinks.length; k++) {
-      navigationLinks[k].classList.remove("active");
-    }
-
-    // Активируем выбранную страницу и кнопку
-    const activePage = document.querySelector(`[data-page="${selectedPage}"]`);
-    if (activePage) {
-      activePage.classList.add("active");
-      this.classList.add("active");
-      window.scrollTo(0, 0);
-    }
+    // вкладки не засоряют историю браузера; у "Резюме" адрес без хэша
+    setRoute(pageName === DEFAULT_PAGE ? "" : "#" + SLUG_BY_PAGE[pageName], null, false);
   });
 }
 
@@ -221,18 +241,33 @@ const projectModalContents = document.querySelectorAll("[data-modal-content]");
 const projectModalTriggers = document.querySelectorAll("[data-modal-target]");
 
 let lastProjectModalTrigger = null;
+let currentProjectModalKey = null;
 
 // если иконка не загрузилась (например, нет файла), просто прячем её
 projectModalIcon.addEventListener("error", function () { projectModalIcon.hidden = true; });
 
-const openProjectModal = function (trigger) {
-  const key = trigger.getAttribute("data-modal-target");
-  const content = document.querySelector('[data-modal-content="' + key + '"]');
+// Поиск по значению атрибута. Ключ может прийти из адреса, поэтому
+// не подставляем его в querySelector, а сравниваем напрямую.
+const findByAttr = function (nodes, attr, value) {
+  for (let i = 0; i < nodes.length; i++) {
+    if (nodes[i].getAttribute(attr) === value) return nodes[i];
+  }
+  return null;
+};
+const findProjectModalContent = function (key) { return findByAttr(projectModalContents, "data-modal-content", key); };
+const findProjectModalTrigger = function (key) { return findByAttr(projectModalTriggers, "data-modal-target", key); };
+
+// Открывает модалку (только интерфейс, адрес не трогает). Возвращает false, если проекта нет.
+const openProjectModal = function (key) {
+  const content = findProjectModalContent(key);
 
   if (!content) {
     console.warn("Нет блока контента для модалки:", key);
-    return;
+    return false;
   }
+
+  // эта модалка уже открыта (например, сработали и popstate, и hashchange)
+  if (currentProjectModalKey === key && projectModalContainer.classList.contains("active")) return true;
 
   // показываем только нужный блок
   projectModalContents.forEach(function (c) {
@@ -241,7 +276,8 @@ const openProjectModal = function (trigger) {
   projectModalBody.scrollTop = 0;
 
   // шапка: название берём с карточки, иконку - из data-modal-icon блока контента
-  const titleElem = trigger.querySelector(".project-title");
+  const trigger = findProjectModalTrigger(key);
+  const titleElem = trigger ? trigger.querySelector(".project-title") : null;
   projectModalTitle.textContent = titleElem ? titleElem.textContent : "";
 
   const iconSrc = content.getAttribute("data-modal-icon");
@@ -261,10 +297,13 @@ const openProjectModal = function (trigger) {
   projectModalContainer.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
 
+  currentProjectModalKey = key;
   lastProjectModalTrigger = trigger;
   projectModalCloseBtn.focus();
+  return true;
 };
 
+// Закрывает модалку (только интерфейс, адрес не трогает).
 const closeProjectModal = function () {
   projectModalContainer.classList.remove("active");
   projectModalContainer.setAttribute("aria-hidden", "true");
@@ -272,24 +311,86 @@ const closeProjectModal = function () {
 
   projectModalContainer.querySelectorAll("video").forEach(function (v) { v.pause(); });
 
+  currentProjectModalKey = null;
   if (lastProjectModalTrigger) lastProjectModalTrigger.focus();
+};
+
+// Закрытие по действию пользователя (крестик, оверлей, Esc).
+const requestCloseProjectModal = function () {
+  if (!projectModalContainer.classList.contains("active")) return;
+
+  if (history.state && history.state.projectModal) {
+    // модалку открыли кликом (запись в историю добавили мы): шаг назад,
+    // а саму модалку закроет обработчик popstate
+    history.back();
+  } else {
+    // открыта по прямой ссылке: "назад" увёл бы с сайта, поэтому просто заменяем адрес
+    setRoute("#" + SLUG_BY_PAGE.portfolio, null, false);
+    closeProjectModal();
+  }
 };
 
 for (let i = 0; i < projectModalTriggers.length; i++) {
   projectModalTriggers[i].addEventListener("click", function (e) {
+    // Ctrl/Cmd/Shift/средняя кнопка: пусть браузер откроет ссылку (href) в новой вкладке
+    if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
+
     e.preventDefault();
-    openProjectModal(this);
+    const key = this.getAttribute("data-modal-target");
+    if (openProjectModal(key)) {
+      // новая запись истории: кнопка "Назад" закроет модалку
+      setRoute("#" + SLUG_BY_PAGE.portfolio + "/" + key, { projectModal: true }, true);
+    }
   });
 }
 
-projectModalCloseBtn.addEventListener("click", closeProjectModal);
-projectModalOverlay.addEventListener("click", closeProjectModal);
+projectModalCloseBtn.addEventListener("click", requestCloseProjectModal);
+projectModalOverlay.addEventListener("click", requestCloseProjectModal);
 
 document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape" && projectModalContainer.classList.contains("active")) {
-    closeProjectModal();
-  }
+  if (e.key === "Escape") requestCloseProjectModal();
 });
+
+
+
+// routing: состояние сайта (вкладка + модалка) берётся из адреса
+
+const hasOwn = function (obj, key) { return Object.prototype.hasOwnProperty.call(obj, key); };
+
+const parseRoute = function () {
+  const parts = location.hash.replace(/^#\/?/, "").split("/");
+  const slug = parts[0].toLowerCase();
+  const page = hasOwn(PAGE_BY_SLUG, slug) ? PAGE_BY_SLUG[slug] : DEFAULT_PAGE;
+
+  // модалка бывает только на вкладке "Портфолио" и только для существующего проекта
+  const modal = page === "portfolio" && parts[1] && findProjectModalContent(parts[1]) ? parts[1] : null;
+
+  return { page: page, modal: modal };
+};
+
+// opts.modal  - применять ли часть адреса про модалку
+// opts.scroll - прокручивать ли страницу вверх при смене вкладки
+const applyRoute = function (opts) {
+  const route = parseRoute();
+
+  const activePage = document.querySelector("[data-page].active");
+  if (!activePage || activePage.getAttribute("data-page") !== route.page) {
+    showPage(route.page, opts.scroll);
+  }
+
+  if (!opts.modal) return;
+
+  if (route.modal) openProjectModal(route.modal);
+  else if (projectModalContainer.classList.contains("active")) closeProjectModal();
+};
+
+// кнопки "Назад"/"Вперёд" и ручное изменение адреса
+window.addEventListener("popstate", function () { applyRoute({ modal: true, scroll: true }); });
+window.addEventListener("hashchange", function () { applyRoute({ modal: true, scroll: true }); });
+
+// При загрузке сразу показываем нужную вкладку (переводы ей не нужны),
+// а модалку откроем после загрузки переводов - см. колбэк i18next.init ниже.
+applyRoute({ modal: false, scroll: false });
 
 
 
@@ -361,10 +462,16 @@ i18next
       loadPath: './assets_mine/translations/translation_{{lng}}.json'
     }
   }, function(err, t) {
-    if (err) return console.error(err);
+    if (err) {
+      console.error(err);
+      applyRoute({ modal: true, scroll: false }); // прямые ссылки на модалки работают и без переводов
+      return;
+    }
     // После загрузки переводов обновляем содержимое сайта
     console.log('Current language:', i18next.language);
     updateContent();
+    // открываем модалку из адреса, когда переводы уже подставлены
+    applyRoute({ modal: true, scroll: false });
     updateWorkExperience();
   });
 

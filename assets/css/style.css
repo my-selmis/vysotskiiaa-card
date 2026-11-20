@@ -154,7 +154,23 @@ input, textarea {
 
 :focus { outline-color: var(--orange-yellow-crayola); }
 
-html { font-family: var(--ff-poppins); }
+html {
+  font-family: var(--ff-poppins);
+  /* резервируем место под скроллбар: контент не "прыгает" при его появлении и исчезновении
+     (смена вкладок, открытие и закрытие модалки) */
+  scrollbar-gutter: stable;
+
+  /* фон страницы задан у html явно: им закрашено и место под скроллбар, а оверлей модалки
+     (position: fixed) его не перекрывает. Пока модалка открыта, фон html затемняется так же,
+     как оверлей (см. ниже), иначе справа была бы заметна светлая полоска. */
+  background-color: var(--smoky-black);
+  transition: background-color var(--transition-1);
+}
+
+/* цвет, который получается у оверлея модалки (hsl(0, 0%, 5%), непрозрачность 0.8) поверх фона страницы */
+html:has(body.modal-open) {
+  background-color: color-mix(in srgb, hsl(0, 0%, 5%) 80%, var(--smoky-black));
+}
 
 body { background: var(--smoky-black); }
 
@@ -1343,6 +1359,62 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 /*-----------------------------------*\
+  #SCROLLBAR
+\*-----------------------------------*/
+
+/* Скроллбар страницы (body) и тела модалки. На узких экранах он тонкий,
+   от 1250px - 20px, как в исходном дизайне. */
+
+:root {
+  --scrollbar-size: 10px;
+  --scrollbar-gap: 2px; /* "рамка" вокруг язычка, она делает его визуально уже дорожки */
+}
+
+body::-webkit-scrollbar,
+.project-modal-body::-webkit-scrollbar { width: var(--scrollbar-size); }
+
+/* --scrollbar-bg: цвет фона под полосой. У страницы не задан (берётся --smoky-black),
+   у модалки равен её фону (см. .project-modal-body) */
+body::-webkit-scrollbar-track,
+.project-modal-body::-webkit-scrollbar-track { background: var(--scrollbar-bg, var(--smoky-black)); }
+
+body::-webkit-scrollbar-thumb,
+.project-modal-body::-webkit-scrollbar-thumb {
+  border: var(--scrollbar-gap) solid var(--scrollbar-bg, var(--smoky-black));
+  background: hsla(0, 0%, 100%, 0.1);
+  border-radius: 20px;
+  box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
+              inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
+}
+
+body::-webkit-scrollbar-thumb:hover,
+.project-modal-body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.15); }
+
+/* Firefox не знает ::-webkit-scrollbar, ему даём стандартные свойства. Только через @supports:
+   Chrome 121+ отдаёт стандартным свойствам приоритет и перестал бы применять правила выше. */
+@supports not selector(::-webkit-scrollbar) {
+  html,
+  .project-modal-body {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(0, 0%, 24%) var(--scrollbar-bg, var(--smoky-black));
+  }
+}
+
+@media (min-width: 1250px) {
+  :root {
+    --scrollbar-size: 20px;
+    --scrollbar-gap: 5px;
+  }
+
+  body::-webkit-scrollbar-button { height: 60px; }
+
+  /* в модалке отступ по краям меньше: она ниже страницы, 60px съели бы почти всю дорожку */
+  .project-modal-body::-webkit-scrollbar-button { height: 20px; }
+}
+
+
+
+/*-----------------------------------*\
   #PROJECT-MODAL
 \*-----------------------------------*/
 
@@ -2209,28 +2281,7 @@ body.modal-open { overflow: hidden; }
    * RESET
    */
 
-  body::-webkit-scrollbar,
-  .project-modal-body::-webkit-scrollbar { width: 20px; }
-
-  body::-webkit-scrollbar-track,
-  .project-modal-body::-webkit-scrollbar-track { background: var(--scrollbar-bg, var(--smoky-black)); }
-
-  body::-webkit-scrollbar-thumb,
-  .project-modal-body::-webkit-scrollbar-thumb {
-    border: 5px solid var(--scrollbar-bg, var(--smoky-black));
-    background: hsla(0, 0%, 100%, 0.1);
-    border-radius: 20px;
-    box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
-                inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
-  }
-
-  body::-webkit-scrollbar-thumb:hover,
-  .project-modal-body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.15); }
-
-  body::-webkit-scrollbar-button { height: 60px; }
-
-  /* в модалке отступ по краям меньше: она ниже страницы, 60px съели бы почти всю дорожку */
-  .project-modal-body::-webkit-scrollbar-button { height: 20px; }
+  /* стили скроллбара вынесены в раздел #SCROLLBAR */
 
 
 
