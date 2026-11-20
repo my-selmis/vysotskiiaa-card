@@ -209,6 +209,90 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 
 
+// project modal
+
+const projectModalContainer = document.querySelector("[data-project-modal-container]");
+const projectModalOverlay = document.querySelector("[data-project-modal-overlay]");
+const projectModalBody = document.querySelector("[data-project-modal-body]");
+const projectModalTitle = document.querySelector("[data-project-modal-title]");
+const projectModalIcon = document.querySelector("[data-project-modal-icon]");
+const projectModalCloseBtn = document.querySelector("[data-project-modal-close]");
+const projectModalContents = document.querySelectorAll("[data-modal-content]");
+const projectModalTriggers = document.querySelectorAll("[data-modal-target]");
+
+let lastProjectModalTrigger = null;
+
+// если иконка не загрузилась (например, нет файла), просто прячем её
+projectModalIcon.addEventListener("error", function () { projectModalIcon.hidden = true; });
+
+const openProjectModal = function (trigger) {
+  const key = trigger.getAttribute("data-modal-target");
+  const content = document.querySelector('[data-modal-content="' + key + '"]');
+
+  if (!content) {
+    console.warn("Нет блока контента для модалки:", key);
+    return;
+  }
+
+  // показываем только нужный блок
+  projectModalContents.forEach(function (c) {
+    c.classList.toggle("active", c === content);
+  });
+  projectModalBody.scrollTop = 0;
+
+  // шапка: название берём с карточки, иконку - из data-modal-icon блока контента
+  const titleElem = trigger.querySelector(".project-title");
+  projectModalTitle.textContent = titleElem ? titleElem.textContent : "";
+
+  const iconSrc = content.getAttribute("data-modal-icon");
+  if (iconSrc) {
+    projectModalIcon.hidden = false;
+    projectModalIcon.src = iconSrc;
+  } else {
+    projectModalIcon.hidden = true;
+  }
+
+  // видео запускаем только при открытии
+  content.querySelectorAll("video[data-autoplay]").forEach(function (v) {
+    v.play().catch(function () {});
+  });
+
+  projectModalContainer.classList.add("active");
+  projectModalContainer.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+
+  lastProjectModalTrigger = trigger;
+  projectModalCloseBtn.focus();
+};
+
+const closeProjectModal = function () {
+  projectModalContainer.classList.remove("active");
+  projectModalContainer.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+
+  projectModalContainer.querySelectorAll("video").forEach(function (v) { v.pause(); });
+
+  if (lastProjectModalTrigger) lastProjectModalTrigger.focus();
+};
+
+for (let i = 0; i < projectModalTriggers.length; i++) {
+  projectModalTriggers[i].addEventListener("click", function (e) {
+    e.preventDefault();
+    openProjectModal(this);
+  });
+}
+
+projectModalCloseBtn.addEventListener("click", closeProjectModal);
+projectModalOverlay.addEventListener("click", closeProjectModal);
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && projectModalContainer.classList.contains("active")) {
+    closeProjectModal();
+  }
+});
+
+
+
 // Автоматический рассчёт времени
 
 const allOtherWorkExperience = 1;

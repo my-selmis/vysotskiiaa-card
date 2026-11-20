@@ -1343,6 +1343,326 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 /*-----------------------------------*\
+  #PROJECT-MODAL
+\*-----------------------------------*/
+
+.project-modal-container {
+  /* длительность анимации открытия/закрытия (то же значение, что в --transition-1) */
+  --pm-fade: 0.25s;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  z-index: 20;
+  pointer-events: none;
+  visibility: hidden;
+  /* при закрытии контейнер прячется только после окончания затухания */
+  transition: visibility 0s linear var(--pm-fade);
+}
+
+.project-modal-container.active {
+  pointer-events: all;
+  visibility: visible;
+  /* при открытии - сразу (иначе не сработает focus() на кнопку закрытия) */
+  transition-delay: 0s;
+}
+
+/* у оверлея нет своего visibility: он наследует его от контейнера и затухает вместе с модалкой */
+.project-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsl(0, 0%, 5%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity var(--pm-fade) ease;
+}
+
+.project-modal-container.active .project-modal-overlay {
+  opacity: 0.8;
+  pointer-events: all;
+}
+
+.project-modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1100px;
+  max-height: 100%;
+  overflow: hidden; /* чтобы полоса прокрутки не выступала за скруглённые углы */
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  box-shadow: var(--shadow-5);
+  transform: scale(1.1);
+  opacity: 0;
+  /* только transform и opacity: анимация visibility у вложенных элементов
+     ломает фокус при открытии и даёт "зависание" элементов при закрытии */
+  transition: transform var(--pm-fade) ease, opacity var(--pm-fade) ease;
+  z-index: 2;
+}
+
+.project-modal-container.active .project-modal {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* шапка: иконка и название проекта слева, кнопка закрытия справа */
+.project-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-shrink: 0;
+  padding: 12px;
+  border-bottom: 1px solid var(--jet);
+}
+
+.project-modal-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.project-modal-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border: 1px solid var(--jet);
+  border-radius: 10px;
+  background: var(--onyx);
+}
+
+/* в сбросе у img стоит display: block, он перебивает атрибут hidden */
+.project-modal-icon[hidden] { display: none; }
+
+.project-modal-title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--white-2);
+  font-size: var(--fs-1);
+  font-weight: var(--fw-600);
+  line-height: 1.2;
+}
+
+.project-modal-close-btn {
+  flex-shrink: 0;
+  background: var(--onyx);
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-2);
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+.project-modal-close-btn:hover,
+.project-modal-close-btn:focus { opacity: 1; }
+
+.project-modal-close-btn ion-icon { --ionicon-stroke-width: 50px; }
+
+.project-modal-body {
+  /* цвет дорожки скроллбара и «рамки» его язычка: у страницы --smoky-black (по умолчанию),
+     у модалки - её собственный фон (см. правила скроллбара в @media 1250px) */
+  --scrollbar-bg: var(--eerie-black-2);
+
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 16px 12px 12px;
+}
+
+/* блокировка прокрутки страницы под модалкой */
+body.modal-open { overflow: hidden; }
+
+/* контент проектов: показывается только активный блок */
+.project-modal-content { display: none; }
+.project-modal-content.active { display: block; }
+
+.pm-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+}
+
+.pm-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.pm-cover,
+.pm-shot {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  background: var(--onyx);
+}
+
+.pm-cover { aspect-ratio: 16 / 9; }
+.pm-shot { aspect-ratio: 16 / 10; }
+
+.pm-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: var(--onyx);
+  border: 1px solid var(--jet);
+  border-radius: 10px;
+  color: var(--white-2);
+  font-size: var(--fs-6);
+  /* только border-color: transition: all анимировала бы и visibility */
+  transition: border-color var(--transition-1);
+}
+
+.pm-link:hover { border-color: var(--orange-yellow-crayola); }
+
+.pm-link ion-icon {
+  flex-shrink: 0;
+  font-size: 20px;
+  color: var(--orange-yellow-crayola);
+}
+
+.pm-link-caption {
+  margin-left: auto;
+  text-align: right;
+  font-size: var(--fs-7);
+  color: var(--orange-yellow-crayola);
+}
+
+.pm-facts {
+  border: 1px solid var(--jet);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.pm-facts > div {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
+  border-bottom: 1px solid var(--jet);
+}
+
+.pm-facts > div:last-child { border-bottom: 0; }
+
+.pm-facts dt {
+  padding: 8px 12px;
+  background: var(--onyx);
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-6);
+}
+
+.pm-facts dd {
+  padding: 8px 12px;
+  color: var(--white-2);
+  font-size: var(--fs-6);
+}
+
+.pm-heading {
+  align-self: flex-start;
+  margin-top: 4px;
+  color: var(--white-2);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-500);
+  text-decoration: underline;
+  text-decoration-color: var(--orange-yellow-crayola);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
+}
+
+.pm-heading-lg {
+  margin-top: 10px;
+  font-size: var(--fs-3);
+}
+
+.pm-text,
+.pm-details {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+}
+
+.pm-details { padding-left: 18px; }
+
+/* в сбросе стоит li { list-style: none }, поэтому маркер задаём на самом li */
+.pm-details li {
+  list-style: disc;
+  margin: 4px 0;
+}
+
+.pm-tasks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--jet);
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.5;
+}
+
+.pm-tasks li:last-child { border-bottom: 0; }
+
+.pm-tasks ion-icon {
+  flex-shrink: 0;
+  font-size: 22px;
+  color: var(--orange-yellow-crayola);
+}
+
+.pm-tasks b {
+  color: var(--white-2);
+  font-weight: var(--fw-500);
+}
+
+@media (min-width: 580px) {
+  .project-modal-container { padding: 20px; }
+  .project-modal { border-radius: 20px; }
+
+  .project-modal-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .project-modal-header { padding: 14px 24px; }
+  .project-modal-body { padding: 20px 24px 24px; }
+
+  .pm-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: 28px;
+  }
+}
+
+/* без анимации, если пользователь отключил её в системе */
+@media (prefers-reduced-motion: reduce) {
+  .project-modal-container,
+  .project-modal,
+  .project-modal-overlay { transition: none; }
+}
+
+
+
+/*-----------------------------------*\
   #RESPONSIVE
 \*-----------------------------------*/
 
@@ -1889,21 +2209,28 @@ textarea.form-input::-webkit-resizer { display: none; }
    * RESET
    */
 
-  body::-webkit-scrollbar { width: 20px; }
+  body::-webkit-scrollbar,
+  .project-modal-body::-webkit-scrollbar { width: 20px; }
 
-  body::-webkit-scrollbar-track { background: var(--smoky-black); }
+  body::-webkit-scrollbar-track,
+  .project-modal-body::-webkit-scrollbar-track { background: var(--scrollbar-bg, var(--smoky-black)); }
 
-  body::-webkit-scrollbar-thumb {
-    border: 5px solid var(--smoky-black);
+  body::-webkit-scrollbar-thumb,
+  .project-modal-body::-webkit-scrollbar-thumb {
+    border: 5px solid var(--scrollbar-bg, var(--smoky-black));
     background: hsla(0, 0%, 100%, 0.1);
     border-radius: 20px;
     box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
                 inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
   }
 
-  body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.15); }
+  body::-webkit-scrollbar-thumb:hover,
+  .project-modal-body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.15); }
 
   body::-webkit-scrollbar-button { height: 60px; }
+
+  /* в модалке отступ по краям меньше: она ниже страницы, 60px съели бы почти всю дорожку */
+  .project-modal-body::-webkit-scrollbar-button { height: 20px; }
 
 
 

@@ -954,7 +954,7 @@
           <ul class="project-list">
 
             <li class="project-item  active" data-filter-item data-category-key="projects_commercial">
-              <a href="" data-i18n-href="project_r_url" target="_blank" rel="noreferrer">
+              <a href="#" role="button" data-modal-target="project_r">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -1328,6 +1328,96 @@
     </div>
 
   </main>
+
+  <!-- project modal -->
+  <div class="project-modal-container" data-project-modal-container aria-hidden="true">
+
+    <div class="project-modal-overlay" data-project-modal-overlay></div>
+
+    <section class="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+
+      <div class="project-modal-header">
+
+        <div class="project-modal-heading">
+          <img class="project-modal-icon" alt="" data-project-modal-icon hidden>
+          <h2 class="project-modal-title" id="project-modal-title" data-project-modal-title></h2>
+        </div>
+
+        <button class="project-modal-close-btn" type="button" data-project-modal-close aria-label="Close">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="project-modal-body" data-project-modal-body>
+
+        <!-- Project R -->
+        <div class="project-modal-content" data-modal-content="project_r" data-modal-icon="./assets_mine/project_r/icon.png">
+          <div class="pm-grid">
+
+            <div class="pm-col">
+              <img class="pm-cover" src="./assets_mine/Project R cover.png" alt="Project R" loading="lazy">
+
+              <a class="pm-link" href="https://drive.google.com/..." target="_blank" rel="noreferrer">
+                <ion-icon name="download-outline"></ion-icon>
+                <span>projectR.apk</span>
+                <span class="pm-link-caption" data-i18n="pm_link_game"></span>
+              </a>
+              <a class="pm-link" href="https://drive.google.com/..." target="_blank" rel="noreferrer">
+                <ion-icon name="play-circle-outline"></ion-icon>
+                <span>Trailer.mp4</span>
+                <span class="pm-link-caption" data-i18n="pm_link_trailer"></span>
+              </a>
+              <a class="pm-link" href="https://drive.google.com/..." target="_blank" rel="noreferrer">
+                <ion-icon name="videocam-outline"></ion-icon>
+                <span>Project R, gameplay.mp4</span>
+                <span class="pm-link-caption" data-i18n="pm_link_gameplay"></span>
+              </a>
+
+              <img class="pm-shot" src="./assets_mine/project_r/shot-1.png" alt="" loading="lazy">
+              <video class="pm-shot" src="./assets_mine/project_r/shot-2.mp4" data-autoplay muted loop playsinline preload="none"></video>
+              <video class="pm-shot" src="./assets_mine/project_r/shot-3.mp4" data-autoplay muted loop playsinline preload="none"></video>
+            </div>
+
+            <div class="pm-col">
+              <dl class="pm-facts">
+                <div><dt data-i18n="pm_genre"></dt><dd data-i18n="project_r_genre"></dd></div>
+                <div><dt data-i18n="pm_platform"></dt><dd data-i18n="project_r_platform"></dd></div>
+                <div><dt data-i18n="pm_dev_time"></dt><dd data-i18n="project_r_dev_time"></dd></div>
+              </dl>
+
+              <h3 class="pm-heading" data-i18n="pm_description"></h3>
+              <p class="pm-text" data-i18n="project_r_description"></p>
+
+              <h3 class="pm-heading pm-heading-lg" data-i18n="pm_main_tasks"></h3>
+              <ul class="pm-tasks">
+                <li><ion-icon name="telescope-outline"></ion-icon><span data-i18n="project_r_tasks.0"></span></li>
+                <li><ion-icon name="extension-puzzle-outline"></ion-icon><span data-i18n="project_r_tasks.1"></span></li>
+                <li><ion-icon name="book-outline"></ion-icon><span data-i18n="project_r_tasks.2"></span></li>
+                <li><ion-icon name="stats-chart-outline"></ion-icon><span data-i18n="project_r_tasks.3"></span></li>
+                <li><ion-icon name="construct-outline"></ion-icon><span data-i18n="project_r_tasks.4"></span></li>
+              </ul>
+
+              <h3 class="pm-heading" data-i18n="pm_details"></h3>
+              <ul class="pm-details">
+                <li data-i18n="project_r_details.0"></li>
+                <li data-i18n="project_r_details.1"></li>
+                <li data-i18n="project_r_details.2"></li>
+                <li data-i18n="project_r_details.3"></li>
+                <li data-i18n="project_r_details.4"></li>
+                <li data-i18n="project_r_details.5"></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- сюда добавляются блоки остальных проектов -->
+
+      </div>
+    </section>
+  </div>
+
 
 
 
