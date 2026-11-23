@@ -324,8 +324,8 @@ article.active {
 \*-----------------------------------*/
 
 .page-shell {
-  --page-top-spacing: 24px;
-  --switch-content-spacing: 12px;
+  --page-top-spacing: 0px;
+  --switch-content-spacing: 0px;
   max-width: 1200px;
   margin: var(--page-top-spacing) auto 0;
 }
@@ -340,14 +340,11 @@ article.active {
 
 .language-switch {
   display: flex;
-  gap: 2px;
-  padding: 2px;
-  border: 1px solid var(--jet);
-  border-radius: 12px;
-  background: var(--eerie-black-2);
+  align-items: center;
 }
 
 .language-switch-option {
+  position: relative;
   display: flex;
   min-width: 44px;
   min-height: 44px;
@@ -355,13 +352,24 @@ article.active {
   justify-content: center;
   border-radius: 9px;
   color: var(--light-gray-70);
-  font-size: var(--fs-7);
-  font-weight: var(--fw-500);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-400);
+}
+
+.language-switch-option + .language-switch-option::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 1px;
+  height: 12px;
+  background: hsla(0, 0%, 84%, 0.2);
+  content: "";
+  transform: translateY(-50%);
 }
 
 .language-switch-option.active {
   color: var(--orange-yellow-crayola);
-  background: var(--jet);
+  font-weight: var(--fw-500);
 }
 
 main {
@@ -1913,6 +1921,11 @@ video.pm-shot {
 
   }
 
+  .page-shell {
+    --page-top-spacing: 6px;
+    --switch-content-spacing: 6px;
+  }
+
 
 
   /**
@@ -2182,6 +2195,11 @@ video.pm-shot {
 
 @media (min-width: 768px) {
 
+  .page-shell {
+    --page-top-spacing: 4px;
+    --switch-content-spacing: 4px;
+  }
+
   /**
    * REUSED STYLE
    */
@@ -2296,6 +2314,11 @@ video.pm-shot {
     --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
     --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
 
+  }
+
+  .page-shell {
+    --page-top-spacing: 4px;
+    --switch-content-spacing: 4px;
   }
 
 
@@ -2418,6 +2441,11 @@ video.pm-shot {
   /**
    * MAIN
    */
+
+  .page-shell {
+    --page-top-spacing: 20px; /* столько же, сколько ширина скролл-бара в широком формате */
+    --switch-content-spacing: 0px;
+  }
 
   main {
     max-width: 1200px;
