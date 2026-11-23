@@ -5,6 +5,17 @@
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
+const setInputModality = function (modality) {
+  document.documentElement.setAttribute("data-input-modality", modality);
+};
+
+setInputModality("pointer");
+document.addEventListener("pointerdown", function () { setInputModality("pointer"); }, true);
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Shift" || e.key === "Control" || e.key === "Alt" || e.key === "Meta") return;
+  setInputModality("keyboard");
+}, true);
+
 
 
 // sidebar variables

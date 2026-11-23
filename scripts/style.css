@@ -154,6 +154,15 @@ input, textarea {
 
 :focus { outline-color: var(--orange-yellow-crayola); }
 
+html[data-input-modality="pointer"] :focus {
+  outline: none;
+}
+
+html[data-input-modality="keyboard"] :focus {
+  outline: 2px solid var(--orange-yellow-crayola);
+  outline-offset: 2px;
+}
+
 html {
   font-family: var(--ff-poppins);
   /* резервируем место под скроллбар: контент не "прыгает" при его появлении и исчезновении
@@ -609,7 +618,7 @@ main {
 }
 
 .navbar-link:hover,
-.navbar-link:focus { color: var(--light-gray-70); }
+html[data-input-modality="keyboard"] .navbar-link:focus { color: var(--light-gray-70); }
 
 .navbar-link.active { color: var(--orange-yellow-crayola); }
 
@@ -1628,7 +1637,7 @@ body::-webkit-scrollbar-thumb:hover,
 }
 
 .project-modal-close-btn:hover,
-.project-modal-close-btn:focus { opacity: 1; }
+html[data-input-modality="keyboard"] .project-modal-close-btn:focus { opacity: 1; }
 
 .project-modal-close-btn ion-icon { --ionicon-stroke-width: 50px; }
 
