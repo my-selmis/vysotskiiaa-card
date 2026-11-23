@@ -1809,14 +1809,15 @@ video.pm-shot {
   font-weight: var(--fw-500);
   text-decoration: underline;
   text-decoration-color: var(--vegas-gold);
-  text-decoration-thickness: 3px;
-  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+  /* text-underline-offset: 5px; */
 }
 
 .pm-heading-lg {
   /* margin-top: 10px; */
   margin-top: 0px;
   font-size: var(--fs-3);
+  text-decoration-thickness: 3px;
 }
 
 .pm-text,
@@ -1837,7 +1838,7 @@ video.pm-shot {
 
 .pm-tasks li {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
   padding: 8px 0;
   border-bottom: 1px solid var(--jet);
