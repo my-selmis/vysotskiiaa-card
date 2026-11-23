@@ -188,7 +188,10 @@ const showPage = function (pageName, scrollToTop) {
     page.classList.toggle("active", page === activePage);
   });
   navigationLinks.forEach(function (link) {
-    link.classList.toggle("active", link.getAttribute("data-page-target") === pageName);
+    const isActive = link.getAttribute("data-page-target") === pageName;
+    link.classList.toggle("active", isActive);
+    if (isActive) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
   });
 
   if (scrollToTop) window.scrollTo(0, 0);
@@ -199,6 +202,7 @@ const showPage = function (pageName, scrollToTop) {
 //   (пусто) или #resume          - вкладка "Резюме" (по умолчанию)
 //   #portfolio                   - вкладка "Портфолио"
 //   #portfolio/project_r         - "Портфолио" с открытой модалкой проекта project_r
+//   #project_r                   - модалка project_r поверх текущей вкладки; прямой переход открывает CV
 // Ключ проекта - значение атрибута data-modal-target. После публикации ссылок его лучше не менять.
 const DEFAULT_PAGE = "about";
 const PAGE_BY_SLUG = { resume: "about", about: "about", portfolio: "portfolio" };
@@ -218,12 +222,14 @@ const setRoute = function (hash, state, push) {
 };
 
 for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
+  navigationLinks[i].addEventListener("click", function (e) {
+    if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
+
     const pageName = this.getAttribute("data-page-target");
     if (!showPage(pageName, true)) return;
 
-    // вкладки не засоряют историю браузера; у "Резюме" адрес без хэша
-    setRoute(pageName === DEFAULT_PAGE ? "" : "#" + SLUG_BY_PAGE[pageName], null, false);
+    e.preventDefault();
+    setRoute(this.getAttribute("href"), null, false);
   });
 }
 
@@ -238,10 +244,12 @@ const projectModalTitle = document.querySelector("[data-project-modal-title]");
 const projectModalIcon = document.querySelector("[data-project-modal-icon]");
 const projectModalCloseBtn = document.querySelector("[data-project-modal-close]");
 const projectModalContents = document.querySelectorAll("[data-modal-content]");
-const projectModalTriggers = document.querySelectorAll("[data-modal-target]");
 
-let lastProjectModalTrigger = null;
 let currentProjectModalKey = null;
+let currentProjectModalOrigin = null;
+let currentProjectModalHistoryId = null;
+let nextProjectModalHistoryId = 0;
+const projectModalOrigins = new Map();
 
 const configureProjectVideo = function (video) {
   video.controls = true;
@@ -274,10 +282,32 @@ const findByAttr = function (nodes, attr, value) {
   return null;
 };
 const findProjectModalContent = function (key) { return findByAttr(projectModalContents, "data-modal-content", key); };
-const findProjectModalTrigger = function (key) { return findByAttr(projectModalTriggers, "data-modal-target", key); };
+const findPageNavigationLink = function (pageName) {
+  for (let i = 0; i < navigationLinks.length; i++) {
+    if (navigationLinks[i].getAttribute("data-page-target") === pageName) return navigationLinks[i];
+  }
+  return null;
+};
+
+const hasOwn = function (obj, key) { return Object.prototype.hasOwnProperty.call(obj, key); };
+
+const parseRoute = function (hash) {
+  const routeHash = typeof hash === "string" ? hash : location.hash;
+  const parts = routeHash.replace(/^#\/?/, "").split("/");
+  const slug = parts[0].toLowerCase();
+
+  if (hasOwn(PAGE_BY_SLUG, slug)) {
+    const page = PAGE_BY_SLUG[slug];
+    const modal = parts[1] && findProjectModalContent(parts[1]) ? parts[1] : null;
+    return { page: page, modal: modal, pageSpecified: true };
+  }
+
+  const projectKey = parts.length === 1 && findProjectModalContent(parts[0]) ? parts[0] : null;
+  return { page: DEFAULT_PAGE, modal: projectKey, pageSpecified: false };
+};
 
 // Открывает модалку (только интерфейс, адрес не трогает). Возвращает false, если проекта нет.
-const openProjectModal = function (key) {
+const openProjectModal = function (key, trigger) {
   const content = findProjectModalContent(key);
 
   if (!content) {
@@ -294,10 +324,10 @@ const openProjectModal = function (key) {
   });
   projectModalBody.scrollTop = 0;
 
-  // шапка: название берём с карточки, иконку - из data-modal-icon блока контента
-  const trigger = findProjectModalTrigger(key);
+  // Шапка не зависит от того, есть ли у проекта карточка в портфолио.
+  const modalTitle = content.getAttribute("data-modal-title");
   const titleElem = trigger ? trigger.querySelector(".project-title") : null;
-  projectModalTitle.textContent = titleElem ? titleElem.textContent : "";
+  projectModalTitle.textContent = modalTitle || (titleElem ? titleElem.textContent : trigger ? trigger.textContent.trim() : "");
 
   const iconSrc = content.getAttribute("data-modal-icon");
   if (iconSrc) {
@@ -327,13 +357,14 @@ const openProjectModal = function (key) {
   document.body.classList.add("modal-open");
 
   currentProjectModalKey = key;
-  lastProjectModalTrigger = trigger;
-  projectModalCloseBtn.focus();
+  projectModalCloseBtn.focus({ preventScroll: true });
   return true;
 };
 
 // Закрывает модалку (только интерфейс, адрес не трогает).
-const closeProjectModal = function () {
+const closeProjectModal = function (restoreOrigin) {
+  const origin = currentProjectModalOrigin;
+
   projectModalContainer.classList.remove("active");
   projectModalContainer.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
@@ -341,37 +372,84 @@ const closeProjectModal = function () {
   projectModalContainer.querySelectorAll("video").forEach(unloadProjectVideo);
 
   currentProjectModalKey = null;
-  if (lastProjectModalTrigger) lastProjectModalTrigger.focus();
+  currentProjectModalOrigin = null;
+  currentProjectModalHistoryId = null;
+
+  if (restoreOrigin && origin) {
+    window.requestAnimationFrame(function () {
+      window.scrollTo(origin.scrollX, origin.scrollY);
+      if (origin.trigger && document.documentElement.contains(origin.trigger)) {
+        origin.trigger.focus({ preventScroll: true });
+      }
+    });
+  }
 };
 
 // Закрытие по действию пользователя (крестик, оверлей, Esc).
 const requestCloseProjectModal = function () {
   if (!projectModalContainer.classList.contains("active")) return;
 
-  if (history.state && history.state.projectModal) {
+  const origin = currentProjectModalOrigin;
+  if (origin &&
+      currentProjectModalHistoryId !== null &&
+      history.state &&
+      history.state.projectModalId === currentProjectModalHistoryId) {
     // модалку открыли кликом (запись в историю добавили мы): шаг назад,
     // а саму модалку закроет обработчик popstate
     history.back();
   } else {
-    // открыта по прямой ссылке: "назад" увёл бы с сайта, поэтому просто заменяем адрес
-    setRoute("#" + SLUG_BY_PAGE.portfolio, null, false);
-    closeProjectModal();
+    // У прямой ссылки нет исходной позиции; оставляем пользователя на базовом URL её раздела.
+    const route = parseRoute();
+    const returnPage = origin ? origin.page : route.page;
+    const baseHash = returnPage === DEFAULT_PAGE
+      ? (route.pageSpecified ? "#" + SLUG_BY_PAGE[returnPage] : "")
+      : "#" + SLUG_BY_PAGE[returnPage];
+    if (origin) showPage(origin.page, false);
+    setRoute(baseHash, null, false);
+    closeProjectModal(Boolean(origin));
+    if (!origin) {
+      const navigationLink = findPageNavigationLink(returnPage);
+      if (navigationLink) navigationLink.focus({ preventScroll: true });
+    }
   }
 };
 
-for (let i = 0; i < projectModalTriggers.length; i++) {
-  projectModalTriggers[i].addEventListener("click", function (e) {
-    // Ctrl/Cmd/Shift/средняя кнопка: пусть браузер откроет ссылку (href) в новой вкладке
-    if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
+document.addEventListener("click", function (e) {
+  const trigger = e.target.closest ? e.target.closest("[data-modal-target]") : null;
+  if (!trigger || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
 
-    e.preventDefault();
-    const key = this.getAttribute("data-modal-target");
-    if (openProjectModal(key)) {
-      // новая запись истории: кнопка "Назад" закроет модалку
-      setRoute("#" + SLUG_BY_PAGE.portfolio + "/" + key, { projectModal: true }, true);
-    }
-  });
-}
+  const href = trigger.getAttribute("href");
+  if (!href || href.charAt(0) !== "#") return;
+
+  const key = trigger.getAttribute("data-modal-target");
+  const route = parseRoute(href);
+  if (route.modal !== key || !findProjectModalContent(key)) return;
+
+  e.preventDefault();
+
+  const activePage = document.querySelector("[data-page].active");
+  const origin = {
+    page: activePage ? activePage.getAttribute("data-page") : DEFAULT_PAGE,
+    scrollX: window.scrollX,
+    scrollY: window.scrollY,
+    trigger: trigger
+  };
+  const targetPage = route.pageSpecified ? route.page : origin.page;
+  if (!showPage(targetPage, false)) return;
+
+  const historyId = ++nextProjectModalHistoryId;
+  projectModalOrigins.set(historyId, origin);
+  currentProjectModalOrigin = origin;
+  currentProjectModalHistoryId = historyId;
+
+  if (openProjectModal(key, trigger)) {
+    setRoute(href, { projectModal: true, projectModalId: historyId }, true);
+  } else {
+    projectModalOrigins.delete(historyId);
+    currentProjectModalOrigin = null;
+    currentProjectModalHistoryId = null;
+  }
+});
 
 projectModalCloseBtn.addEventListener("click", requestCloseProjectModal);
 projectModalOverlay.addEventListener("click", requestCloseProjectModal);
@@ -383,19 +461,6 @@ document.addEventListener("keydown", function (e) {
 
 
 // routing: состояние сайта (вкладка + модалка) берётся из адреса
-
-const hasOwn = function (obj, key) { return Object.prototype.hasOwnProperty.call(obj, key); };
-
-const parseRoute = function () {
-  const parts = location.hash.replace(/^#\/?/, "").split("/");
-  const slug = parts[0].toLowerCase();
-  const page = hasOwn(PAGE_BY_SLUG, slug) ? PAGE_BY_SLUG[slug] : DEFAULT_PAGE;
-
-  // модалка бывает только на вкладке "Портфолио" и только для существующего проекта
-  const modal = page === "portfolio" && parts[1] && findProjectModalContent(parts[1]) ? parts[1] : null;
-
-  return { page: page, modal: modal };
-};
 
 // opts.modal  - применять ли часть адреса про модалку
 // opts.scroll - прокручивать ли страницу вверх при смене вкладки
@@ -409,13 +474,28 @@ const applyRoute = function (opts) {
 
   if (!opts.modal) return;
 
-  if (route.modal) openProjectModal(route.modal);
-  else if (projectModalContainer.classList.contains("active")) closeProjectModal();
+  if (route.modal) {
+    const historyState = history.state;
+    const historyId = historyState && historyState.projectModalId;
+    const origin = historyId ? projectModalOrigins.get(historyId) : null;
+
+    if (origin) {
+      currentProjectModalOrigin = origin;
+      currentProjectModalHistoryId = historyId;
+    } else if (!projectModalContainer.classList.contains("active")) {
+      currentProjectModalOrigin = null;
+      currentProjectModalHistoryId = historyId || null;
+    }
+
+    openProjectModal(route.modal, currentProjectModalOrigin ? currentProjectModalOrigin.trigger : null);
+  } else if (projectModalContainer.classList.contains("active")) {
+    closeProjectModal(Boolean(opts.restoreOrigin));
+  }
 };
 
 // кнопки "Назад"/"Вперёд" и ручное изменение адреса
-window.addEventListener("popstate", function () { applyRoute({ modal: true, scroll: true }); });
-window.addEventListener("hashchange", function () { applyRoute({ modal: true, scroll: true }); });
+window.addEventListener("popstate", function () { applyRoute({ modal: true, scroll: false, restoreOrigin: true }); });
+window.addEventListener("hashchange", function () { applyRoute({ modal: true, scroll: true, restoreOrigin: false }); });
 
 // При загрузке сразу показываем нужную вкладку (переводы ей не нужны),
 // а модалку откроем после загрузки переводов - см. колбэк i18next.init ниже.

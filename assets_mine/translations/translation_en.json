@@ -74,7 +74,7 @@
   "work_aegate_date": "August 2025 — June 2026",
   "work_aegate_text": "A small private game studio and startup. I worked as head Game Designer on an unannounced Mobile Action RPG. I was responsible for the main design decisions and worked closely with the management team on the overall vision of the game.",
   "work_aegate_project_r": [
-    "My key contributions to <i>Project R</i> (midcore, action rpg):",
+    "My key contributions to <a href=\"#project_r\" data-modal-target=\"project_r\"><i>Project R</i></a> (midcore, action rpg):",
     "Designed the core gameplay loop, combat, and a deep system of abilities and attributes",
     "Created and configured content in Unity: levels, abilities, enemies/bosses and their behaviour",
     "Designed shader requirements tailored to the specifics of a 2.5D game",
