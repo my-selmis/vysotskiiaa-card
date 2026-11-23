@@ -1622,6 +1622,9 @@ video.pm-shot {
   transition: border-color var(--transition-1);
 }
 
+.pm-link:not([href]),
+.pm-link[href=""] { display: none; }
+
 .pm-link:hover { border-color: var(--vegas-gold); }
 
 .pm-link ion-icon {
