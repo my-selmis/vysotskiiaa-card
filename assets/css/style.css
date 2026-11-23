@@ -1573,6 +1573,8 @@ body.modal-open { overflow: hidden; }
   gap: 20px;
 }
 
+.pm-grid + .pm-grid { margin-top: 20px; }
+
 .pm-col {
   display: flex;
   flex-direction: column;
@@ -1589,7 +1591,8 @@ body.modal-open { overflow: hidden; }
 }
 
 .pm-cover { aspect-ratio: 16 / 9; }
-.pm-shot { aspect-ratio: 16 / 10; }
+/* .pm-shot { aspect-ratio: 16 / 10; } */
+
 img.pm-shot {
   display: block;
   height: auto;
@@ -1619,19 +1622,19 @@ video.pm-shot {
   transition: border-color var(--transition-1);
 }
 
-.pm-link:hover { border-color: var(--orange-yellow-crayola); }
+.pm-link:hover { border-color: var(--vegas-gold); }
 
 .pm-link ion-icon {
   flex-shrink: 0;
   font-size: 20px;
-  color: var(--orange-yellow-crayola);
+  color: var(--vegas-gold);
 }
 
 .pm-link-caption {
   margin-left: auto;
   text-align: right;
-  font-size: var(--fs-7);
-  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-7-1);
+  color: var(--vegas-gold);
 }
 
 .pm-links-compact {
@@ -1711,13 +1714,14 @@ video.pm-shot {
   font-size: var(--fs-5);
   font-weight: var(--fw-500);
   text-decoration: underline;
-  text-decoration-color: var(--orange-yellow-crayola);
+  text-decoration-color: var(--vegas-gold);
   text-decoration-thickness: 3px;
   text-underline-offset: 5px;
 }
 
 .pm-heading-lg {
-  margin-top: 10px;
+  /* margin-top: 10px; */
+  margin-top: 0px;
   font-size: var(--fs-3);
 }
 
@@ -1776,10 +1780,9 @@ video.pm-shot {
   .project-modal-header { padding: 14px 24px; }
   .project-modal-body { padding: 20px 24px 24px; }
 
-  .pm-grid {
-    grid-template-columns: minmax(0, 55fr) minmax(0, 45fr);
-    gap: 28px;
-  }
+  .pm-grid { gap: 28px; }
+  .pm-grid--top { grid-template-columns: minmax(0, 54fr) minmax(0, 46fr); }
+  .pm-grid--bottom { grid-template-columns: minmax(0, 50fr) minmax(0, 50fr); }
 }
 
 /* без анимации, если пользователь отключил её в системе */
