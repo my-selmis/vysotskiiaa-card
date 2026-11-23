@@ -211,7 +211,8 @@ const SLUG_BY_PAGE = { about: "resume", portfolio: "portfolio" };
 // Меняет адрес без перезагрузки страницы: push - новая запись истории, иначе замена текущей.
 // Если history API недоступен, откатываемся на location.hash.
 const setRoute = function (hash, state, push) {
-  const url = hash || location.pathname + location.search;
+  const baseUrl = location.pathname + location.search;
+  const url = hash ? baseUrl + hash : baseUrl;
   try {
     if (push) history.pushState(state, "", url);
     else history.replaceState(state, "", url);
@@ -550,10 +551,68 @@ function updateWorkExperience() {
 
 // Работа с библиотекой i18next для локализации сайта
 
+const languageSwitchButtons = document.querySelectorAll("[data-language-switch]");
+const languageSwitchGroup = document.querySelector("[data-language-switch-group]");
+
+const getLanguageFromUrl = function () {
+  const language = new URLSearchParams(location.search).get("lang");
+  if (!language) return undefined;
+
+  const languageCode = language.toLowerCase().split(/[-_]/)[0];
+  return languageCode === "ru" || languageCode === "en" ? languageCode : undefined;
+};
+
+const getCurrentLanguageCode = function () {
+  const language = i18next.resolvedLanguage || i18next.language;
+  return language.toLowerCase().split(/[-_]/)[0] === "ru" ? "ru" : "en";
+};
+
+const updateLanguageSwitch = function (language) {
+  languageSwitchGroup.setAttribute("aria-label", language === "ru" ? "Язык сайта" : "Site language");
+  languageSwitchButtons.forEach(function (button) {
+    const isActive = button.getAttribute("data-language-switch") === language;
+    button.classList.toggle("active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+    button.disabled = false;
+  });
+};
+
+const updateLanguageUrl = function (language) {
+  const searchParams = new URLSearchParams(location.search);
+  searchParams.set("lang", language);
+  const query = searchParams.toString();
+  const url = location.pathname + (query ? "?" + query : "") + location.hash;
+  history.replaceState(history.state, "", url);
+};
+
+languageSwitchButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    const language = this.getAttribute("data-language-switch");
+    if (language !== "ru" && language !== "en") {
+      console.error("Unsupported language selector value:", language);
+      return;
+    }
+
+    i18next.changeLanguage(language, function (err) {
+      if (err) {
+        console.error("Failed to change language:", err);
+        return;
+      }
+
+      updateContent();
+      updateWorkExperience();
+      document.documentElement.lang = language;
+      updateLanguageSwitch(language);
+      updateLanguageUrl(language);
+    });
+  });
+});
+
 i18next
   .use(i18nextBrowserLanguageDetector)
   .use(i18nextHttpBackend)
   .init({
+    lng: getLanguageFromUrl(),
     // Если язык не определён – используется английский по умолчанию
     fallbackLng: 'en',
     debug: true,
@@ -579,6 +638,9 @@ i18next
     // После загрузки переводов обновляем содержимое сайта
     console.log('Current language:', i18next.language);
     updateContent();
+    const language = getCurrentLanguageCode();
+    document.documentElement.lang = language;
+    updateLanguageSwitch(language);
     // открываем модалку из адреса, когда переводы уже подставлены
     applyRoute({ modal: true, scroll: false });
     updateWorkExperience();
