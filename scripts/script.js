@@ -85,8 +85,8 @@ for (let i = 0; i < selectItems.length; i++) {
 
     // Получаем стабильный ключ фильтра из атрибута data-filter-key
     let selectedKey = this.getAttribute("data-filter-key");
-    // Обновляем отображаемое значение селекта – берем перевод по ключу из data-i18n
-    selectValue.innerText = i18next.t(this.getAttribute("data-i18n"));
+    // Обновляем отображаемое значение селекта по ключу перевода
+    selectValue.innerText = i18next.t(this.getAttribute("data-i18n-text"));
     elementToggleFunc(select);
     filterFunc(selectedKey);
 
@@ -153,7 +153,7 @@ let lastClickedBtn = filterBtn[0];
 for (let i = 0; i < filterBtn.length; i++) {
   filterBtn[i].addEventListener("click", function () {
     let selectedKey = this.getAttribute("data-filter-key");
-    selectValue.innerText = i18next.t(this.getAttribute("data-i18n"));
+    selectValue.innerText = i18next.t(this.getAttribute("data-i18n-text"));
     filterFunc(selectedKey);
 
     lastClickedBtn.classList.remove("active");
@@ -299,6 +299,25 @@ const findPageNavigationLink = function (pageName) {
     if (navigationLinks[i].getAttribute("data-page-target") === pageName) return navigationLinks[i];
   }
   return null;
+};
+
+const refreshActiveProjectVideos = function () {
+  if (!currentProjectModalKey || !projectModalContainer.classList.contains("active")) return;
+
+  const content = findProjectModalContent(currentProjectModalKey);
+  if (!content) return;
+
+  content.querySelectorAll("video[data-i18n-data-src]").forEach(function (video) {
+    const source = video.getAttribute("data-src");
+    if (!source) return;
+
+    video.pause();
+    video.currentTime = 0;
+    if (video.getAttribute("src") === source) return;
+
+    video.src = source;
+    video.load();
+  });
 };
 
 const hasOwn = function (obj, key) { return Object.prototype.hasOwnProperty.call(obj, key); };
@@ -611,6 +630,7 @@ languageSwitchButtons.forEach(function (button) {
       }
 
       updateContent();
+      refreshActiveProjectVideos();
       updateWorkExperience();
       document.documentElement.lang = language;
       updateLanguageSwitch(language);
@@ -657,12 +677,12 @@ i18next
     updateWorkExperience();
   });
 
-// Функция обновления текста на странице
+// Функция обновления локализованного контента
 function updateContent() {
-  // Элементы, которым назначен атрибут data-i18n, будут заменены на перевод
+  // Элементы, которым назначен атрибут data-i18n-text, будут заменены на перевод
   // Текстовое содержимое
-  document.querySelectorAll('[data-i18n]').forEach(function(elem) {
-    const key = elem.getAttribute('data-i18n');
+  document.querySelectorAll('[data-i18n-text]').forEach(function(elem) {
+    const key = elem.getAttribute('data-i18n-text');
     elem.innerHTML = i18next.t(key);
   });
 
@@ -673,4 +693,25 @@ function updateContent() {
       elem.setAttribute('href', i18next.t(key));
     }
   });
+
+  const updateLocalizedSources = function (selector, keyAttribute, sourceAttribute) {
+    document.querySelectorAll(selector).forEach(function (elem) {
+      const key = elem.getAttribute(keyAttribute);
+      if (!i18next.exists(key)) {
+        console.error("Missing localized media source:", key);
+        return;
+      }
+
+      const source = i18next.t(key);
+      if (typeof source !== "string" || source.trim() === "") {
+        console.error("Invalid localized media source:", key);
+        return;
+      }
+
+      elem.setAttribute(sourceAttribute, source);
+    });
+  };
+
+  updateLocalizedSources("[data-i18n-src]", "data-i18n-src", "src");
+  updateLocalizedSources("[data-i18n-data-src]", "data-i18n-data-src", "data-src");
 }

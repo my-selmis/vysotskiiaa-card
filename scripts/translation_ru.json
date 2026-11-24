@@ -239,7 +239,10 @@
     "Настроил VFX всех атак и способностей"
   ],
 
-  "project_r_game_url": "https://drive.google.com/file/d/1HLAPyCTDIL_IeSgc0MLSQ-G1PIoueL58/view"
+  "project_r_game_url": "https://drive.google.com/file/d/1HLAPyCTDIL_IeSgc0MLSQ-G1PIoueL58/view",
+  "project_r_screenshot_src": "./visuals/project_r/Project R ss1.png",
+  "project_r_buildcraft_video_src": "./visuals/project_r/buildcraft.mp4",
+  "project_r_bosses_video_src": "./visuals/project_r/bosses.mp4"
 
 }
   

@@ -201,6 +201,9 @@
   "my_little_home_url": "https://www.figma.com/board/XPaTVdLUe62mio4da3h8nV?node-id=4106-260&t=DjcGdYiQd9eMymDE-4",
   "laqueus_url": "https://www.figma.com/board/XPaTVdLUe62mio4da3h8nV?node-id=4106-261&t=DjcGdYiQd9eMymDE-4",
 
-  "project_r_game_url": ""
+  "project_r_game_url": "",
+  "project_r_screenshot_src": "./visuals/project_r/Project R ss1.png",
+  "project_r_buildcraft_video_src": "./visuals/project_r/buildcraft.mp4",
+  "project_r_bosses_video_src": "./visuals/project_r/bosses.mp4"
 }
   
