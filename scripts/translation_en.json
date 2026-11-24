@@ -74,7 +74,7 @@
   "work_aegate_date": "August 2025 — June 2026",
   "work_aegate_text": "A small private game studio and startup. I worked as head Game Designer on an unannounced Mobile Action RPG. I was responsible for the main design decisions and worked closely with the management team on the overall vision of the game.",
   "work_aegate_project_r": [
-    "My key contributions to <a href=\"#project_r\" data-modal-target=\"project_r\"><i>Project R</i></a> (midcore, action rpg):",
+    "My key contributions to <a href=\"#project_r\" data-modal-target=\"project_r\">Project R</a> (midcore, action rpg):",
     "Designed the core gameplay loop, combat, and a deep system of abilities and attributes",
     "Created and configured content in Unity: levels, abilities, enemies/bosses and their behaviour",
     "Designed shader requirements tailored to the specifics of a 2.5D game",
@@ -104,7 +104,7 @@
   "work_vir_date": "January 2024 — September 2025",
   "work_vir_text": "A small commercial web and mobile game development studio. At the studio, I led and successfully shipped three projects as head Game Designer, taking responsibility for the main design decisions: from market analysis and concept to testing and fine-tuning in Unity.",
   "work_vir_moonshards":[
-    "My key contributions to <i>Moonshards -- IDLE RPG</i> (midcore, idle rpg):",
+    "My key contributions to <a href=\"#moonshards\" data-modal-target=\"moonshards\">Moonshards -- IDLE RPG</a> (midcore, idle rpg):",
     "Designed the combat system, ability and item systems, the gacha-system",
     "Developed a mathematical model for the game economy, progression pace, and difficulty",
     "Formulated the FTUE: introduction to the game, tutorial, first objectives and early progression",
@@ -112,7 +112,7 @@
     ""
   ],
   "work_vir_cool_kingdom":[
-    "My key contributions to <i>Cool Kingdom</i> (casual, strategy):",
+    "My key contributions to <a href=\"#cool_kingdom\" data-modal-target=\"cool_kingdom\">Cool Kingdom</a> (casual, strategy):",
     "Designed a flexible and scalable system of dialogues/quests, wrote the text for them",
     "The game received high ratings from players (9.3/10 on CrazyGames) for its design and gameplay",
     "Implemented native rewarded-ads, which achieved a conversion rate of 47.65%, with an average of 9.89 rewarded-ads per active player following conversion",
@@ -257,6 +257,33 @@
     "Broke development down into several stages for iterative testing and drew up a roadmap",
     "Conducted over 10 playtests and iterated on the game’s balance based on their results",
     "Thoroughly tested the game, finding and documenting over 100 bugs"
+  ],
+
+
+
+  "cool_kingdom_dev_time": "6 months (2024)",
+  "cool_kingdom_link_gameplay": "https://drive.google.com/file/d/1LUnS6KswZZzhPFtdN1LY77oeatH3goOO/view?usp=drive_link",
+
+  "cool_kingdom_ss1": "../visuals/cool_kingdom/Cool Kingdom SS1 (en).png",
+  "cool_kingdom_ss2": "../visuals/cool_kingdom/Cool Kingdom SS2 (en).png",
+  "cool_kingdom_ss3": "../visuals/cool_kingdom/Cool Kingdom SS3 (en).png",
+
+  "cool_kingdom_description": "Game inspired by “Reigns” and “Sort the Court!”. The characters come to the player, and he answers them with ‘yes’ or ‘no’. Voluminous for content.",
+  "cool_kingdom_key_contributions": [
+    "Designed all the mechanics and systems in the game",
+    "Wrote all the technical documentation for the project",
+    "Created several voluminous configs in Google Sheets to configure content",
+    "With the help of <b>ChatGPT</b> worked out the design of the characters and wrote their replicas",
+    "Engineered a mathematical model of game balance, set up the speed of progression in the game"
+  ],
+  "cool_kingdom_other_tasks": [
+    "Thought out the mechanism of quests, their interweaving into quest chains",
+    "Worked with the narrative designer on the storyline",
+    "Controlled the process of completing tasks in YouGile",
+    "Put the specifications to the artist for the characters and buildings",
+    "Invented native rewarded-ads",
+    "Designed interface layouts in Figma",
+    "Wrote over 240 quests for more than 20 characters"
   ]
 
 

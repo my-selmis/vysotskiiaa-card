@@ -691,6 +691,8 @@ function updateContent() {
     const key = elem.getAttribute('data-i18n-href');
     if (i18next.exists(key)) {
       elem.setAttribute('href', i18next.t(key));
+    } else {
+      elem.setAttribute('href', '');
     }
   });
 

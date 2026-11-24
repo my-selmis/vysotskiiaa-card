@@ -651,7 +651,10 @@ html[data-input-modality="keyboard"] .navbar-link:focus { color: var(--light-gra
   color:hsl(12, 54%, 58%);
   font-style:italic;
   text-decoration: underline;
+  transition: color var(--transition-1);
 }
+
+.about-text a:hover { color: var(--white-2); }
 
 .about-text li::before {
   margin-right: 0.4em; /* Отступ между точкой и текстом */
@@ -1015,7 +1018,10 @@ html[data-input-modality="keyboard"] .navbar-link:focus { color: var(--light-gra
   color: inherit;
   display: inline;
   text-decoration: underline;
+  transition: color var(--transition-1);
 }
+
+.timeline-text a:hover { color: var(--white-2); }
 
 .timeline-ul-tasks li, .timeline-ul-achievements li, .timeline-ol li{
   color: var(--light-gray-70);
@@ -1025,7 +1031,12 @@ html[data-input-modality="keyboard"] .navbar-link:focus { color: var(--light-gra
   color: inherit;
   display: inline;
   text-decoration: underline;
+  transition: color var(--transition-1);
 }
+
+.timeline-ul-tasks li a:hover,
+.timeline-ul-achievements li a:hover,
+.timeline-ol li a:hover { color: var(--white-2); }
 
 .timeline-ol {
   counter-set: list-item 0;
@@ -1809,7 +1820,7 @@ video.pm-shot {
 
 .pm-heading {
   align-self: flex-start;
-  margin-top: 4px;
+  /* margin-top: 4px; */
   color: var(--white-2);
   font-size: var(--fs-5);
   font-weight: var(--fw-500);
@@ -1821,7 +1832,7 @@ video.pm-shot {
 
 .pm-heading-lg {
   /* margin-top: 10px; */
-  margin-top: 0px;
+  /* margin-top: 0px; */
   font-size: var(--fs-3);
   text-decoration-thickness: 3px;
   text-underline-offset: 2px;
@@ -1867,6 +1878,17 @@ video.pm-shot {
   font-weight: var(--fw-500);
 }
 
+.pm-tasks a {
+  display: inline;
+  color: inherit;
+  text-decoration: underline;
+  /* text-decoration-color: var(--vegas-gold); */
+  text-underline-offset: 2px;
+  transition: color var(--transition-1);
+}
+
+.pm-tasks a:hover { color: var(--white-2); }
+
 @media (min-width: 580px) {
   .project-modal-container { padding: 20px; }
   .project-modal { border-radius: 20px; }
@@ -1883,8 +1905,8 @@ video.pm-shot {
   .project-modal-body { padding: 20px 24px 24px; }
 
   .pm-grid { gap: 28px; }
-  .pm-grid--top { grid-template-columns: minmax(0, 54fr) minmax(0, 46fr); }
-  .pm-grid--bottom { grid-template-columns: minmax(0, 50fr) minmax(0, 50fr); }
+  .pm-grid--top { grid-template-columns: minmax(0, 1.32fr) minmax(0, 1fr); }
+  .pm-grid--bottom { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 }
 
 /* без анимации, если пользователь отключил её в системе */
