@@ -120,7 +120,7 @@
     ""
   ],
   "work_vir_fruit_balls":[
-    "My key contributions to <i>Fruit Balls</i> (casual, suika):",
+    "My key contributions to <a href=\"#fruit_balls\" data-modal-target=\"fruit_balls\">Fruit Balls: Juicy Fusion</a> (casual, suika):",
     "Deconstructed the Suika Game genre, analysed the competitors and identified the best solutions",
     "Came up with the designs for the objects and levels, drew up the briefs for the artists"
   ],
@@ -240,7 +240,7 @@
   "moonshards_ss2": "../visuals/moonshards/Moonshards SS2 (en).png",
   "moonshards_ss3": "../visuals/moonshards/Moonshards SS3 (en).png",
 
-  "moonshards_description": "Неанонсированная гача-игра с пиксельной графикой. Целью проекта было сделать мобильную Action-RPG с глубоким геймплеем для более вовлечённой аудитории.",
+  "moonshards_description": "A complex idle RPG with a focus on active skills, the use of consumables and pets. The game is inspired by “Hero Tale”, but features 2-on-2 combat.",
   "moonshards_key_contributions": [
     "I studied the genre and key references, picked the best solutions, and suggested my own improvements",
     "Designed scalable game systems and their mechanics",
@@ -284,6 +284,86 @@
     "Invented native rewarded-ads",
     "Designed interface layouts in Figma",
     "Wrote over 240 quests for more than 20 characters"
+  ],
+
+
+
+  "fruit_balls_dev_time": "4 months (2024)",
+
+  "fruit_balls_description": "A simple game in the Suika genre. I tried to move away from the original formula and add more variety to gameplay with interesting mechanics.",
+  "fruit_balls_key_contributions": [
+    "Conducted a competitor analysis, compiled the best solutions in the genre",
+    "Wrote all the technical documentation for the project",
+    "Designed interface layouts in <b>Figma</b>",
+    "Came up with the designs for the objects and levels, drew up the briefs for the artists",
+    "Configured levels and interface in <b>Unity</b>"
+  ],
+  "fruit_balls_other_tasks": [
+    "Together with the artist, worked out the design of objects, levels, backgrounds",
+    "Designed the mechanisms of rewarded and interstitial ads",
+    "Designed a system for dailies, skins, boosters",
+    "Set up the balance of currency",
+    "Designed staged tutorials for the mechanics",
+    "Tracked gaming metrics with GameAnalytics",
+    "Conducted a retrospective of the project"
+  ],
+
+
+
+  "spellcheck_dev_time": "1 month (2023)",
+
+  "spellcheck_description": "An experimental prototype, where the player manually types spells to cast them. One mistake - and type again, just like with real spells.",
+  "spellcheck_key_contributions": [
+    "Came up with the idea and the main mechanics",
+    "Wrote the documentation for the project",
+    "Developed a prototype in Unity with <b>Unity Visual Scripting</b>",
+    "Picked and integrated free assets into the game"
+  ],
+  "spellcheck_other_tasks": [
+    "Set up the scene in Unity",
+    "Implemented three levels of difficulty",
+    "Conducted several playtests and configured game balance",
+    "Analyzed possible competitors",
+    "Compiled a small marketing passport for the project",
+    "Drew some assets"
+  ],
+
+
+
+  "my_little_home_dev_time": "1 month (2023)",
+
+  "my_little_home_description": "A game for a game-jam with the theme “One level, many tasks”. Subsequently, I finished and refined the project later on my own.",
+  "my_little_home_key_contributions": [
+    "Came up with the idea and the main mechanics",
+    "Wrote all the documentation for the project",
+    "Directed the team: set the tasks, oversaw the development process",
+    "Set up the scene in Unity",
+    "Conducted playtests and configured game balance based on the results"
+  ],
+  "my_little_home_other_tasks": [
+    "Defined the scope of the mechanics in game-jam conditions",
+    "Designed tutorial sprites in Figma",
+    "Complied a moodboard in Miro",
+    "Tested the game for bugs",
+    "Integrated assets into Unity",
+    "Implemented frame-by-frame animations in Unity"
+  ],
+
+
+
+  "laqueus_dev_time": "2 weeks (2022)",
+
+  "laqueus_description": "My 1st project! I developed it with friends to test my abilities. Laqueus was initially envisioned as a runner, though during development some puzzle elements emerged.",
+  "laqueus_key_contributions": [
+    "Came up with the idea and the main mechanics",
+    "Wrote the technical documentation for the project",
+    "Directed the team: set the tasks, oversaw the development process",
+    "Tested the game and reported any found bugs"
+  ],
+  "laqueus_other_tasks": [
+    "Designed and built two levels in Unity",
+    "Conducted playtests and adjusted the levels’ difficulty",
+    "Drew all the assets"
   ]
 
 
