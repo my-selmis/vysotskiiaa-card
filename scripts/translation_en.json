@@ -216,6 +216,15 @@
 
   "project_r_description": "An unannounced gacha-game with pixel art. The aim of the project was to create a mobile Action RPG with deep gameplay for a more engaged audience.",
   "project_r_key_contributions": [
+    "",
+    "Designed the core gameplay loop, combat, and a deep system of abilities and attributes",
+    "Created and configured content in Unity: levels, abilities, enemies/bosses and their behaviour",
+    "Designed shader requirements tailored to the specifics of a 2.5D game",
+    "Designed and validated a new, easy-to-use control scheme for a mobile action rpg",
+    "Developed the game’s market positioning: hook and retain factors, the TA’s motivations",
+
+
+
     "Analysed the competition and developed a <b>vision</b> for a market-viable game",
     "Designed scalable <b>game systems</b> and their mechanics",
     "Wrote all the project <b>documentation</b>: product, conceptual and technical",
@@ -223,12 +232,22 @@
     "Created and configured levels, abilities, regular enemies and bosses in <b>Unity</b>"
   ],
   "project_r_other_tasks": [
+    "",
+    "Deconstructed the mobile action RPG genre, analysed the competition, and proposed the project’s USP and SSP",
+    "Broke down the development into several iterations, starting with a prototype, to gradually test the design",
+    "Compiled a feature-list and a roadmap covering the full development through release and beyond",
+    "Designed all the UX-wireframes",
+    "Configured VFX for all attacks and abilities",
+    "Thoroughly tested the game, documented over 100 bugs",
+
+
+
     "Together with the management team, I formulated and developed a shared vision for the project",
     "Analysed the needs of fans of the genre and drew up a target audience profile",
     "Broke down the design testing into several iterations, starting with a prototype, and drew up a roadmap",
-    "Created the core controls, designed the UX-wireframes",
-    "Thoroughly tested the game, identified and documented over 100 bugs",
-    "Configured VFX for all attacks and abilities"
+    "Created the core controls, ",
+    "",
+    ""
   ],
 
 
@@ -242,21 +261,34 @@
 
   "moonshards_description": "A complex idle RPG with a focus on active skills, the use of consumables and pets. The game is inspired by “Hero Tale”, but features 2-on-2 combat.",
   "moonshards_key_contributions": [
+    "",
+    "Designed the combat system, ability and item systems, the gacha-system",
+    "Developed a mathematical model for the game economy, progression pace, and difficulty",
+    "Formulated the FTUE: introduction to the game, tutorial, first objectives and early progression",
+    "Created and configured content: abilities, items, pets, enemies, and locations",
+    "Conducted over 10 playtests and iterated on the game’s balance based on their results",
+
+
+
     "I studied the genre and key references, picked the best solutions, and suggested my own improvements",
-    "Designed scalable game systems and their mechanics",
     "Wrote all the technical documentation for the project",
     "Developed a mathematical model of the balance and set up a complex geometric progression",
     "Filled the game with content: from locations and enemies to skills and items"
   ],
   "moonshards_other_tasks": [
+    "",
     "Together with the management team, I formulated and developed an overarching vision for the project",
     "I redesigned the ‘Hero Tale’ combat system to a ‘2v2’ format following successful testing",
     "I diversified the combat system with a wide range of skills, passives, buffs and items",
-    "I designed a gacha system for pets",
     "Created several comprehensive configurations in Google Sheets to customise locations, enemies, items, active and passive skills, the experience curve, the shop, etc.",
     "Broke development down into several stages for iterative testing and drew up a roadmap",
+    "Thoroughly tested the game, finding and documenting over 100 bugs",
+    
+    
+    
+    "I designed a gacha system for pets",
     "Conducted over 10 playtests and iterated on the game’s balance based on their results",
-    "Thoroughly tested the game, finding and documenting over 100 bugs"
+    ""
   ],
 
 
@@ -270,20 +302,33 @@
 
   "cool_kingdom_description": "Game inspired by “Reigns” and “Sort the Court!”. The characters come to the player, and he answers them with ‘yes’ or ‘no’. Voluminous for content.",
   "cool_kingdom_key_contributions": [
-    "Designed all the mechanics and systems in the game",
+    "",
+    "Designed a flexible and scalable system of dialogues/quests, wrote the text for them",
+    "The game received high ratings from players (9.3/10 on CrazyGames) for its design and gameplay",
+    "Implemented native rewarded-ads, which achieved a conversion rate of 47.65%, with an average of 9.89 rewarded-ads per active player following conversion",
+    "Came up with the design and personalities of the characters, drew up the briefs for the artists",
     "Wrote all the technical documentation for the project",
-    "Created several voluminous configs in Google Sheets to configure content",
+
+
+
     "With the help of <b>ChatGPT</b> worked out the design of the characters and wrote their replicas",
-    "Engineered a mathematical model of game balance, set up the speed of progression in the game"
+    ""
   ],
   "cool_kingdom_other_tasks": [
-    "Thought out the mechanism of quests, their interweaving into quest chains",
+    "",
+    "Created several voluminous configs in Google Sheets to configure content",
+    "Engineered a mathematical model of game balance, set up the speed of progression in the game",
     "Worked with the narrative designer on the storyline",
     "Controlled the process of completing tasks in YouGile",
-    "Put the specifications to the artist for the characters and buildings",
-    "Invented native rewarded-ads",
     "Designed interface layouts in Figma",
-    "Wrote over 240 quests for more than 20 characters"
+    "Wrote over 240 quests for more than 20 characters",
+    
+    
+    
+    "Invented native rewarded-ads",
+    "Put the specifications to the artist for the characters and buildings",
+    "Thought out the mechanism of quests, their interweaving into quest chains",
+    ""
   ],
 
 
@@ -292,20 +337,27 @@
 
   "fruit_balls_description": "A simple game in the Suika genre. I tried to move away from the original formula and add more variety to gameplay with interesting mechanics.",
   "fruit_balls_key_contributions": [
-    "Conducted a competitor analysis, compiled the best solutions in the genre",
-    "Wrote all the technical documentation for the project",
-    "Designed interface layouts in <b>Figma</b>",
+    "",
+    "Deconstructed the Suika Game genre, analysed the competitors and identified the best solutions",
     "Came up with the designs for the objects and levels, drew up the briefs for the artists",
-    "Configured levels and interface in <b>Unity</b>"
+    "Designed interface layouts in <b>Figma</b>",
+    "Configured levels and interface in <b>Unity</b>",
+    "Wrote all the technical documentation for the project",
+    ""
   ],
   "fruit_balls_other_tasks": [
-    "Together with the artist, worked out the design of objects, levels, backgrounds",
+    "",
     "Designed the mechanisms of rewarded and interstitial ads",
     "Designed a system for dailies, skins, boosters",
     "Set up the balance of currency",
     "Designed staged tutorials for the mechanics",
     "Tracked gaming metrics with GameAnalytics",
-    "Conducted a retrospective of the project"
+    "Conducted a retrospective of the project",
+    
+    
+    
+    "Together with the artist, worked out the design of objects, levels, backgrounds",
+    ""
   ],
 
 
