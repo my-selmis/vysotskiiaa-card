@@ -201,9 +201,66 @@
   "my_little_home_url": "https://www.figma.com/board/XPaTVdLUe62mio4da3h8nV?node-id=4106-260&t=DjcGdYiQd9eMymDE-4",
   "laqueus_url": "https://www.figma.com/board/XPaTVdLUe62mio4da3h8nV?node-id=4106-261&t=DjcGdYiQd9eMymDE-4",
 
-  "project_r_game_url": "",
-  "project_r_screenshot_src": "./visuals/project_r/Project R ss1.png",
-  "project_r_buildcraft_video_src": "./visuals/project_r/buildcraft.mp4",
-  "project_r_bosses_video_src": "./visuals/project_r/bosses.mp4"
+  "pm_genre": "Genre",
+  "pm_platform": "Platform",
+  "pm_dev_time": "Development time",
+  "pm_description": "Description:",
+  "pm_key_contributions": "My key contributions:",
+  "pm_other_tasks": "Other tasks:",
+  "pm_link_game": "link to the game",
+  "pm_link_gameplay": "gameplay video",
+  "pm_link_trailer": "trailer",
+
+  
+  "project_r_dev_time": "1 year (2025–2026)",
+
+  "project_r_description": "An unannounced gacha-game with pixel art. The aim of the project was to create a mobile Action RPG with deep gameplay for a more engaged audience.",
+  "project_r_key_contributions": [
+    "Analysed the competition and developed a <b>vision</b> for a market-viable game",
+    "Designed scalable <b>game systems</b> and their mechanics",
+    "Wrote all the project <b>documentation</b>: product, conceptual and technical",
+    "Carried out numerous playtests and fine-tuned the <b>balance</b> between difficulty and fun",
+    "Created and configured levels, abilities, regular enemies and bosses in <b>Unity</b>"
+  ],
+  "project_r_other_tasks": [
+    "Together with the management team, I formulated and developed a shared vision for the project",
+    "Analysed the needs of fans of the genre and drew up a target audience profile",
+    "Broke down the design testing into several iterations, starting with a prototype, and drew up a roadmap",
+    "Created the core controls, designed the UX-wireframes",
+    "Thoroughly tested the game, identified and documented over 100 bugs",
+    "Configured VFX for all attacks and abilities"
+  ],
+
+
+
+  "moonshards_dev_time": "1 year (2024–2025)",
+  "moonshards_link_gameplay": "https://drive.google.com/file/d/1A7K4hE5qJE4p8dRWVUNJRxcvawB5043T/view?usp=drive_link",
+
+  "moonshards_ss1": "../visuals/moonshards/Moonshards SS1 (en).png",
+  "moonshards_ss2": "../visuals/moonshards/Moonshards SS2 (en).png",
+  "moonshards_ss3": "../visuals/moonshards/Moonshards SS3 (en).png",
+
+  "moonshards_description": "Неанонсированная гача-игра с пиксельной графикой. Целью проекта было сделать мобильную Action-RPG с глубоким геймплеем для более вовлечённой аудитории.",
+  "moonshards_key_contributions": [
+    "I studied the genre and key references, picked the best solutions, and suggested my own improvements",
+    "Designed scalable game systems and their mechanics",
+    "Wrote all the technical documentation for the project",
+    "Developed a mathematical model of the balance and set up a complex geometric progression",
+    "Filled the game with content: from locations and enemies to skills and items"
+  ],
+  "moonshards_other_tasks": [
+    "Together with the management team, I formulated and developed an overarching vision for the project",
+    "I redesigned the ‘Hero Tale’ combat system to a ‘2v2’ format following successful testing",
+    "I diversified the combat system with a wide range of skills, passives, buffs and items",
+    "I designed a gacha system for pets",
+    "Created several comprehensive configurations in Google Sheets to customise locations, enemies, items, active and passive skills, the experience curve, the shop, etc.",
+    "Broke development down into several stages for iterative testing and drew up a roadmap",
+    "Conducted over 10 playtests and iterated on the game’s balance based on their results",
+    "Thoroughly tested the game, finding and documenting over 100 bugs"
+  ]
+
+
+
+
 }
   

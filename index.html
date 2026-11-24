@@ -980,14 +980,14 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category-key="projects_commercial">
-              <a href="" data-i18n-href="moonshards_url" target="_blank" rel="noreferrer">
+              <a href="#portfolio/moonshards" data-modal-target="moonshards">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./visuals/Moonshards cover.png" alt="moonshards" loading="lazy">
+                  <img src="./visuals/moonshards/Moonshards cover.png" alt="moonshards" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Moonshards -- Idle RPG</h3>
@@ -1366,15 +1366,12 @@
 
             <div class="pm-column">
               <img class="pm-cover" src="./visuals/project_r/Project R cover.png" alt="Project R" loading="lazy">
-
-              
-
             </div>
 
             <div class="pm-column">
               <dl class="pm-facts">
-                <div><dt data-i18n-text="pm_genre"></dt><dd data-i18n-text="project_r_genre"></dd></div>
-                <div><dt data-i18n-text="pm_platform"></dt><dd data-i18n-text="project_r_platform"></dd></div>
+                <div><dt data-i18n-text="pm_genre"></dt><dd>Midcore, Action RPG</dd></div>
+                <div><dt data-i18n-text="pm_platform"></dt><dd>Mobile</dd></div>
                 <div><dt data-i18n-text="pm_dev_time"></dt><dd data-i18n-text="project_r_dev_time"></dd></div>
               </dl>
 
@@ -1413,15 +1410,15 @@
               </div> -->
               
               <div class="pm-links-inline">
-                <a class="pm-link pm-link-inline" href="" data-i18n-href="project_r_game_url" target="_blank" rel="noreferrer">
+                <a class="pm-link pm-link-inline" href="https://drive.google.com/file/d/1HLAPyCTDIL_IeSgc0MLSQ-G1PIoueL58/view" target="_blank" rel="noreferrer">
                   <ion-icon name="game-controller-outline"></ion-icon>
                   <span class="pm-link-caption" data-i18n-text="pm_link_game"></span>
                 </a>
-                <a class="pm-link pm-link-inline" href="https://drive.google.com/..." target="_blank" rel="noreferrer">
+                <a class="pm-link pm-link-inline" href="https://drive.google.com/file/d/1KzHzVMeiKTPDYtaSYfCyHgZ9Yprej78p/view?usp=sharing" target="_blank" rel="noreferrer">
                   <ion-icon name="film-outline"></ion-icon>
                   <span class="pm-link-caption" data-i18n-text="pm_link_gameplay"></span>
                 </a>
-                <a class="pm-link pm-link-inline" href="https://drive.google.com/..." target="_blank" rel="noreferrer">
+                <a class="pm-link pm-link-inline" href="https://drive.google.com/file/d/1D1722mKiManiz4HUBaZrwpBfxrpIWiaV/view" target="_blank" rel="noreferrer">
                   <ion-icon name="image-outline"></ion-icon>
                   <span class="pm-link-caption" data-i18n-text="pm_link_trailer"></span>
                 </a>
@@ -1437,39 +1434,116 @@
 
           <div class="pm-grid pm-grid--bottom">
             <div class="pm-column">
-              <img class="pm-shot" src="./visuals/project_r/Project R ss1.png" data-i18n-src="project_r_screenshot_src" alt="" loading="lazy">
-              <video class="pm-shot pm-demo-video" data-src="./visuals/project_r/buildcraft.mp4" data-i18n-data-src="project_r_buildcraft_video_src"></video>
-              <video class="pm-shot pm-demo-video" data-src="./visuals/project_r/bosses.mp4" data-i18n-data-src="project_r_bosses_video_src"></video>
+              <img class="pm-shot" src="./visuals/project_r/Project R ss1.png" alt="" loading="lazy">
+              <video class="pm-shot pm-demo-video" data-src="./visuals/project_r/buildcraft.mp4"></video>
+              <video class="pm-shot pm-demo-video" data-src="./visuals/project_r/bosses.mp4"></video>
             </div>
 
             <div class="pm-column">
               <div class="pm-block">
-                <h3 class="pm-heading pm-heading-lg" data-i18n-text="pm_main_tasks"></h3>
+                <h3 class="pm-heading pm-heading-lg" data-i18n-text="pm_key_contributions"></h3>
                 <ul class="pm-tasks">
-                  <li><ion-icon name="telescope-outline"></ion-icon><span data-i18n-text="project_r_tasks.0"></span></li>
-                  <li><ion-icon name="extension-puzzle-outline"></ion-icon><span data-i18n-text="project_r_tasks.1"></span></li>
-                  <li><ion-icon name="book-outline"></ion-icon><span data-i18n-text="project_r_tasks.2"></span></li>
-                  <li><ion-icon name="stats-chart-outline"></ion-icon><span data-i18n-text="project_r_tasks.3"></span></li>
-                  <li><ion-icon name="construct-outline"></ion-icon><span data-i18n-text="project_r_tasks.4"></span></li>
+                  <li><ion-icon name="telescope-outline"></ion-icon><span data-i18n-text="project_r_key_contributions.0"></span></li>
+                  <li><ion-icon name="extension-puzzle-outline"></ion-icon><span data-i18n-text="project_r_key_contributions.1"></span></li>
+                  <li><ion-icon name="book-outline"></ion-icon><span data-i18n-text="project_r_key_contributions.2"></span></li>
+                  <li><ion-icon name="stats-chart-outline"></ion-icon><span data-i18n-text="project_r_key_contributions.3"></span></li>
+                  <li><ion-icon name="construct-outline"></ion-icon><span data-i18n-text="project_r_key_contributions.4"></span></li>
                 </ul>
               </div>
 
               <div class="pm-block">
-                <h3 class="pm-heading" data-i18n-text="pm_details"></h3>
+                <h3 class="pm-heading" data-i18n-text="pm_other_tasks"></h3>
                 <ul class="pm-details">
-                  <li data-i18n-text="project_r_details.0"></li>
-                  <li data-i18n-text="project_r_details.1"></li>
-                  <li data-i18n-text="project_r_details.2"></li>
-                  <li data-i18n-text="project_r_details.3"></li>
-                  <li data-i18n-text="project_r_details.4"></li>
-                  <li data-i18n-text="project_r_details.5"></li>
+                  <li data-i18n-text="project_r_other_tasks.0"></li>
+                  <li data-i18n-text="project_r_other_tasks.1"></li>
+                  <li data-i18n-text="project_r_other_tasks.2"></li>
+                  <li data-i18n-text="project_r_other_tasks.3"></li>
+                  <li data-i18n-text="project_r_other_tasks.4"></li>
+                  <li data-i18n-text="project_r_other_tasks.5"></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
+        <!-- Project R end -->
 
         <!-- сюда добавляются блоки остальных проектов -->
+
+        <!-- Moonshards -->
+        <div class="project-modal-content" data-modal-content="moonshards" data-modal-title="Moonshards -- IDLE RPG" data-modal-icon="./visuals/moonshards/Moonshards logo.png">
+          <div class="pm-grid pm-grid--top">
+
+            <div class="pm-column">
+              <img class="pm-cover" src="./visuals/moonshards/Moonshards cover.png" alt="Moonshards" loading="lazy">
+            </div>
+
+            <div class="pm-column">
+              <dl class="pm-facts">
+                <div><dt data-i18n-text="pm_genre"></dt><dd>Midcore, Idle RPG</dd></div>
+                <div><dt data-i18n-text="pm_platform"></dt><dd>Mobile</dd></div>
+                <div><dt data-i18n-text="pm_dev_time"></dt><dd data-i18n-text="moonshards_dev_time"></dd></div>
+              </dl>
+
+              
+              <div class="pm-links-inline">
+                <a class="pm-link pm-link-inline" href="https://play.google.com/store/apps/details?id=com.virgroup.idlerpg" target="_blank" rel="noreferrer">
+                  <ion-icon name="game-controller-outline"></ion-icon>
+                  <span class="pm-link-caption" data-i18n-text="pm_link_game"></span>
+                </a>
+                <a class="pm-link pm-link-inline" href="" data-i18n-href="moonshards_link_gameplay" target="_blank" rel="noreferrer">
+                  <ion-icon name="film-outline"></ion-icon>
+                  <span class="pm-link-caption" data-i18n-text="pm_link_gameplay"></span>
+                </a>
+                <a class="pm-link pm-link-inline" href="" target="_blank" rel="noreferrer">
+                  <ion-icon name="image-outline"></ion-icon>
+                  <span class="pm-link-caption" data-i18n-text="pm_link_trailer"></span>
+                </a>
+              </div>
+              
+
+              <div class="pm-block">
+                <h3 class="pm-heading" data-i18n-text="pm_description"></h3>
+                <p class="pm-text" data-i18n-text="moonshards_description"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pm-grid pm-grid--bottom">
+            <div class="pm-column">
+              <img class="pm-shot" src="" data-i18n-src="moonshards_ss1" alt="" loading="lazy">
+              <img class="pm-shot" src="" data-i18n-src="moonshards_ss2" alt="" loading="lazy">
+              <img class="pm-shot" src="" data-i18n-src="moonshards_ss3" alt="" loading="lazy">
+            </div>
+
+            <div class="pm-column">
+              <div class="pm-block">
+                <h3 class="pm-heading pm-heading-lg" data-i18n-text="pm_key_contributions"></h3>
+                <ul class="pm-tasks">
+                  <li><ion-icon name="telescope-outline"></ion-icon><span data-i18n-text="moonshards_key_contributions.0"></span></li>
+                  <li><ion-icon name="extension-puzzle-outline"></ion-icon><span data-i18n-text="moonshards_key_contributions.1"></span></li>
+                  <li><ion-icon name="book-outline"></ion-icon><span data-i18n-text="moonshards_key_contributions.2"></span></li>
+                  <li><ion-icon name="calculator-outline"></ion-icon><span data-i18n-text="moonshards_key_contributions.3"></span></li>
+                  <li><ion-icon name="color-palette-outline"></ion-icon><span data-i18n-text="moonshards_key_contributions.4"></span></li>
+                </ul>
+              </div>
+
+              <div class="pm-block">
+                <h3 class="pm-heading" data-i18n-text="pm_other_tasks"></h3>
+                <ul class="pm-details">
+                  <li data-i18n-text="moonshards_other_tasks.0"></li>
+                  <li data-i18n-text="moonshards_other_tasks.1"></li>
+                  <li data-i18n-text="moonshards_other_tasks.2"></li>
+                  <li data-i18n-text="moonshards_other_tasks.3"></li>
+                  <li data-i18n-text="moonshards_other_tasks.4"></li>
+                  <li data-i18n-text="moonshards_other_tasks.5"></li>
+                  <li data-i18n-text="moonshards_other_tasks.6"></li>
+                  <li data-i18n-text="moonshards_other_tasks.7"></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Project R end -->
 
       </div>
     </section>
