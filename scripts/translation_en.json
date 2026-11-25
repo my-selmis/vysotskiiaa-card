@@ -222,7 +222,7 @@
   "project_r_key_contributions": [
     "",
     "Designed the core gameplay loop, combat, and a deep system of abilities and attributes",
-    "Created and configured content in Unity: levels, abilities, enemies/bosses and their behaviour",
+    "Created and configured content in <b>Unity</b>: levels, abilities, enemies/bosses and their behaviour",
     "Designed shader requirements tailored to the specifics of a 2.5D game",
     "Designed and validated a new, easy-to-use control scheme for a mobile action rpg",
     "Developed the game’s market positioning: hook and retain factors, the TA’s motivations",
@@ -240,9 +240,12 @@
     "Deconstructed the mobile action RPG genre, analysed the competition, and proposed the project’s USP and SSP",
     "Broke down the development into several iterations, starting with a prototype, to gradually test the design",
     "Compiled a feature-list and a roadmap covering the full development through release and beyond",
-    "Designed all the UX-wireframes",
+    "Wrote the conceptual and technical documentation for the project",
+    "Designed all the UX-wireframes in <b>Figma</b>",
     "Configured VFX for all attacks and abilities",
-    "Thoroughly tested the game, documented over 100 bugs",
+    "Conducted playtests to assess the fun factor and difficulty",
+    "Set up the balance based on playtests",
+    "Identified and documented over 100 bugs",
 
 
 
@@ -270,12 +273,11 @@
     "Developed a mathematical model for the game economy, progression pace, and difficulty",
     "Formulated the FTUE: introduction to the game, tutorial, first objectives and early progression",
     "Created and configured content: abilities, items, pets, enemies, and locations",
-    "Conducted over 10 playtests and iterated on the game’s balance based on their results",
-
-
-
-    "I studied the genre and key references, picked the best solutions, and suggested my own improvements",
     "Wrote all the technical documentation for the project",
+    
+    
+    
+    "I studied the genre and key references, picked the best solutions, and suggested my own improvements",
     "Developed a mathematical model of the balance and set up a complex geometric progression",
     "Filled the game with content: from locations and enemies to skills and items"
   ],
@@ -286,7 +288,8 @@
     "I diversified the combat system with a wide range of skills, passives, buffs and items",
     "Created several comprehensive configurations in Google Sheets to customise locations, enemies, items, active and passive skills, the experience curve, the shop, etc.",
     "Broke development down into several stages for iterative testing and drew up a roadmap",
-    "Thoroughly tested the game, finding and documenting over 100 bugs",
+    "Conducted over 10 playtests and iterated on the game’s balance based on their results",
+    "Identified and documented over 100 bugs",
     
     
     
@@ -320,15 +323,15 @@
   ],
   "cool_kingdom_other_tasks": [
     "",
-    "Created several voluminous configs in Google Sheets to configure content",
+    "Created configs in Google Sheets to configure content",
     "Engineered a mathematical model of game balance, set up the speed of progression in the game",
-    "Worked with the narrative designer on the storyline",
+    "Worked out the storyline with the narrative designer",
+    "Designed interface layouts in <b>Figma</b>",
+    "With the help of <b>ChatGPT</b> wrote ~240 quests for 20 characters",
+    
+    
+    
     "Controlled the process of completing tasks in YouGile",
-    "Designed interface layouts in Figma",
-    "Wrote over 240 quests for more than 20 characters",
-    
-    
-    
     "Invented native rewarded-ads",
     "Put the specifications to the artist for the characters and buildings",
     "Thought out the mechanism of quests, their interweaving into quest chains",

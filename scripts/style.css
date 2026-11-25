@@ -1854,6 +1854,11 @@ video.pm-shot {
   margin: 4px 0;
 }
 
+.pm-details b {
+  color: var(--white-2);
+  font-weight: var(--fw-400);
+}
+
 .pm-tasks li {
   display: flex;
   align-items: center;
