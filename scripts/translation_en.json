@@ -262,9 +262,9 @@
   "moonshards_work_time": "10 months (2024–2025)",
   "moonshards_link_gameplay": "https://drive.google.com/file/d/1A7K4hE5qJE4p8dRWVUNJRxcvawB5043T/view?usp=drive_link",
 
-  "moonshards_ss1": "../visuals/moonshards/Moonshards SS1 (en).png",
-  "moonshards_ss2": "../visuals/moonshards/Moonshards SS2 (en).png",
-  "moonshards_ss3": "../visuals/moonshards/Moonshards SS3 (en).png",
+  "moonshards_ss1": "./visuals/moonshards/Moonshards SS1 (en).png",
+  "moonshards_ss2": "./visuals/moonshards/Moonshards SS2 (en).png",
+  "moonshards_ss3": "./visuals/moonshards/Moonshards SS3 (en).png",
 
   "moonshards_description": "A complex idle RPG with a focus on active skills, the use of consumables and pets. The game is inspired by “Hero Tale”, but features 2-on-2 combat.",
   "moonshards_key_contributions": [
@@ -303,9 +303,9 @@
   "cool_kingdom_work_time": "6 months (2024)",
   "cool_kingdom_link_gameplay": "https://drive.google.com/file/d/1LUnS6KswZZzhPFtdN1LY77oeatH3goOO/view?usp=drive_link",
 
-  "cool_kingdom_ss1": "../visuals/cool_kingdom/Cool Kingdom SS1 (en).png",
-  "cool_kingdom_ss2": "../visuals/cool_kingdom/Cool Kingdom SS2 (en).png",
-  "cool_kingdom_ss3": "../visuals/cool_kingdom/Cool Kingdom SS3 (en).png",
+  "cool_kingdom_ss1": "./visuals/cool_kingdom/Cool Kingdom SS1 (en).png",
+  "cool_kingdom_ss2": "./visuals/cool_kingdom/Cool Kingdom SS2 (en).png",
+  "cool_kingdom_ss3": "./visuals/cool_kingdom/Cool Kingdom SS3 (en).png",
 
   "cool_kingdom_description": "Game inspired by “Reigns” and “Sort the Court!”. The characters come to the player, and he answers them with ‘yes’ or ‘no’. I directed the project from concept to launch.",
   "cool_kingdom_key_contributions": [
