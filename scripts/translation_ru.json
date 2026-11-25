@@ -260,9 +260,9 @@
   "moonshards_work_time": "10 месяцев (2024–2025 г)",
   "moonshards_link_gameplay": "https://drive.google.com/file/d/1sx6FXvxR5V7uG5hXCEEpDJIUVicBy3qO/view?usp=drive_link",
 
-  "moonshards_ss1": "../visuals/moonshards/Moonshards SS1 (ru).png",
-  "moonshards_ss2": "../visuals/moonshards/Moonshards SS2 (ru).png",
-  "moonshards_ss3": "../visuals/moonshards/Moonshards SS3 (ru).png",
+  "moonshards_ss1": "./visuals/moonshards/Moonshards SS1 (ru).png",
+  "moonshards_ss2": "./visuals/moonshards/Moonshards SS2 (ru).png",
+  "moonshards_ss3": "./visuals/moonshards/Moonshards SS3 (ru).png",
 
   "moonshards_description": "Комплексная Idle RPG с упором на активные скиллы, использование расходников и питомцев. Игра вдохновлена “Hero Tale”, но отличается боем 2 на 2.",
   "moonshards_key_contributions": [
@@ -300,9 +300,9 @@
   "cool_kingdom_link_gameplay": "https://drive.google.com/file/d/1oun-6KLamNiXEA7xFmXWxZc0fjf8y3Mb/view?usp=sharing",
   "cool_kingdom_link_yandex": "https://yandex.ru/games/developer/44934#app=361923",
 
-  "cool_kingdom_ss1": "../visuals/cool_kingdom/Cool Kingdom SS1 (ru).png",
-  "cool_kingdom_ss2": "../visuals/cool_kingdom/Cool Kingdom SS2 (ru).png",
-  "cool_kingdom_ss3": "../visuals/cool_kingdom/Cool Kingdom SS3 (ru).png",
+  "cool_kingdom_ss1": "./visuals/cool_kingdom/Cool Kingdom SS1 (ru).png",
+  "cool_kingdom_ss2": "./visuals/cool_kingdom/Cool Kingdom SS2 (ru).png",
+  "cool_kingdom_ss3": "./visuals/cool_kingdom/Cool Kingdom SS3 (ru).png",
 
   "cool_kingdom_description": "Игра, вдохновлённая “Reigns” и “Sort The Court!”. К игроку приходят персонажи, а он им отвечает ‘да’ или ‘нет’. Я руководил проектом от идеи до релиза.",
   "cool_kingdom_key_contributions": [
