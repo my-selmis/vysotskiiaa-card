@@ -201,9 +201,13 @@
   "my_little_home_url": "https://www.figma.com/board/XPaTVdLUe62mio4da3h8nV?node-id=4106-260&t=DjcGdYiQd9eMymDE-4",
   "laqueus_url": "https://www.figma.com/board/XPaTVdLUe62mio4da3h8nV?node-id=4106-261&t=DjcGdYiQd9eMymDE-4",
 
-  "pm_genre": "Genre",
-  "pm_platform": "Platform",
-  "pm_dev_time": "Development time",
+
+
+
+  
+  "pm_game_profile": "Game's profile",
+  "pm_project_role": "My project role",
+  "pm_work_time": "My work time",
   "pm_description": "Description:",
   "pm_key_contributions": "My key contributions:",
   "pm_other_tasks": "Other tasks:",
@@ -212,7 +216,7 @@
   "pm_link_trailer": "trailer",
 
   
-  "project_r_dev_time": "1 year (2025–2026)",
+  "project_r_work_time": "11 months (2025–2026)",
 
   "project_r_description": "An unannounced gacha-game with pixel art. The aim of the project was to create a mobile Action RPG with deep gameplay for a more engaged audience.",
   "project_r_key_contributions": [
@@ -252,7 +256,7 @@
 
 
 
-  "moonshards_dev_time": "1 year (2024–2025)",
+  "moonshards_work_time": "10 months (2024–2025)",
   "moonshards_link_gameplay": "https://drive.google.com/file/d/1A7K4hE5qJE4p8dRWVUNJRxcvawB5043T/view?usp=drive_link",
 
   "moonshards_ss1": "../visuals/moonshards/Moonshards SS1 (en).png",
@@ -293,14 +297,14 @@
 
 
 
-  "cool_kingdom_dev_time": "6 months (2024)",
+  "cool_kingdom_work_time": "6 months (2024)",
   "cool_kingdom_link_gameplay": "https://drive.google.com/file/d/1LUnS6KswZZzhPFtdN1LY77oeatH3goOO/view?usp=drive_link",
 
   "cool_kingdom_ss1": "../visuals/cool_kingdom/Cool Kingdom SS1 (en).png",
   "cool_kingdom_ss2": "../visuals/cool_kingdom/Cool Kingdom SS2 (en).png",
   "cool_kingdom_ss3": "../visuals/cool_kingdom/Cool Kingdom SS3 (en).png",
 
-  "cool_kingdom_description": "Game inspired by “Reigns” and “Sort the Court!”. The characters come to the player, and he answers them with ‘yes’ or ‘no’. Voluminous for content.",
+  "cool_kingdom_description": "Game inspired by “Reigns” and “Sort the Court!”. The characters come to the player, and he answers them with ‘yes’ or ‘no’. I directed the project from concept to launch.",
   "cool_kingdom_key_contributions": [
     "",
     "Designed a flexible and scalable system of dialogues/quests, wrote the text for them",
@@ -333,7 +337,7 @@
 
 
 
-  "fruit_balls_dev_time": "4 months (2024)",
+  "fruit_balls_work_time": "4 months (2024)",
 
   "fruit_balls_description": "A simple game in the Suika genre. I tried to move away from the original formula and add more variety to gameplay with interesting mechanics.",
   "fruit_balls_key_contributions": [
@@ -362,7 +366,7 @@
 
 
 
-  "spellcheck_dev_time": "1 month (2023)",
+  "spellcheck_work_time": "1 month (2023)",
 
   "spellcheck_description": "An experimental prototype, where the player manually types spells to cast them. One mistake - and type again, just like with real spells.",
   "spellcheck_key_contributions": [
@@ -382,7 +386,7 @@
 
 
 
-  "my_little_home_dev_time": "1 month (2023)",
+  "my_little_home_work_time": "1 month (2023)",
 
   "my_little_home_description": "A game for a game-jam with the theme “One level, many tasks”. Subsequently, I finished and refined the project later on my own.",
   "my_little_home_key_contributions": [
@@ -403,7 +407,7 @@
 
 
 
-  "laqueus_dev_time": "2 weeks (2022)",
+  "laqueus_work_time": "2 weeks (2022)",
 
   "laqueus_description": "My 1st project! I developed it with friends to test my abilities. Laqueus was initially envisioned as a runner, though during development some puzzle elements emerged.",
   "laqueus_key_contributions": [

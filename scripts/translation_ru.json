@@ -208,10 +208,11 @@
 
 
 
+
   
-  "pm_genre": "Жанр",
-  "pm_platform": "Платформа",
-  "pm_dev_time": "Время разработки",
+  "pm_game_profile": "Профиль игры",
+  "pm_project_role": "Роль в проекте",
+  "pm_work_time": "Время работы",
   "pm_description": "Описание:",
   "pm_key_contributions": "Мой главный вклад:",
   "pm_other_tasks": "Другие задачи:",
@@ -221,7 +222,7 @@
   "pm_link_trailer": "трейлер",
   
 
-  "project_r_dev_time": "1 год (2025–2026 г)",
+  "project_r_work_time": "11 месяцев (2025–2026 г)",
 
   "project_r_description": "Неанонсированная гача-игра с пиксельной графикой. Целью проекта было сделать мобильную Action-RPG с глубоким геймплеем для более вовлечённой аудитории.",
   "project_r_key_contributions": [
@@ -255,7 +256,7 @@
 
 
 
-  "moonshards_dev_time": "1 год (2024–2025 г)",
+  "moonshards_work_time": "10 месяцев (2024–2025 г)",
   "moonshards_link_gameplay": "https://drive.google.com/file/d/1sx6FXvxR5V7uG5hXCEEpDJIUVicBy3qO/view?usp=drive_link",
 
   "moonshards_ss1": "../visuals/moonshards/Moonshards SS1 (ru).png",
@@ -295,7 +296,7 @@
 
 
 
-  "cool_kingdom_dev_time": "6 месяцев (2024 г)",
+  "cool_kingdom_work_time": "6 месяцев (2024 г)",
   "cool_kingdom_link_gameplay": "https://drive.google.com/file/d/1oun-6KLamNiXEA7xFmXWxZc0fjf8y3Mb/view?usp=sharing",
   "cool_kingdom_link_yandex": "https://yandex.ru/games/developer/44934#app=361923",
 
@@ -303,7 +304,7 @@
   "cool_kingdom_ss2": "../visuals/cool_kingdom/Cool Kingdom SS2 (ru).png",
   "cool_kingdom_ss3": "../visuals/cool_kingdom/Cool Kingdom SS3 (ru).png",
 
-  "cool_kingdom_description": "Игра, вдохновлённая “Reigns” и “Sort The Court!”. К игроку приходят персонажи, а он им отвечает ‘да’ или ‘нет’. Объёмная на контент.",
+  "cool_kingdom_description": "Игра, вдохновлённая “Reigns” и “Sort The Court!”. К игроку приходят персонажи, а он им отвечает ‘да’ или ‘нет’. Я руководил проектом от идеи до релиза.",
   "cool_kingdom_key_contributions": [
     "",
     "Спроектировал гибкую и масштабируемую систему диалогов/квестов, написал для них текст",
@@ -334,7 +335,7 @@
 
 
 
-  "fruit_balls_dev_time": "4 месяца (2024 г)",
+  "fruit_balls_work_time": "4 месяца (2024 г)",
 
   "fruit_balls_description": "Простенькая игра в жанре Suika. Я пытался отойти от изначальной формулы и добавить больше разнообразия геймплея и интересных механик.",
   "fruit_balls_key_contributions": [
@@ -363,7 +364,7 @@
 
 
 
-  "spellcheck_dev_time": "1 месяц (2023 г)",
+  "spellcheck_work_time": "1 месяц (2023 г)",
 
   "spellcheck_description": "Экспериментальный прототип, где игрок вручную печатает заклинания, чтобы их применить. Одна ошибка -- и печатай заново, прямо как с настоящими заклинаниями.",
   "spellcheck_key_contributions": [
@@ -383,7 +384,7 @@
 
 
 
-  "my_little_home_dev_time": "1 месяц (2023 г)",
+  "my_little_home_work_time": "1 месяц (2023 г)",
 
   "my_little_home_description": "Игра для геймджема в теме “Один уровень, Много задач”. Впоследствии игру дорабатывал самостоятельно на основе плейтестов.",
   "my_little_home_key_contributions": [
@@ -404,7 +405,7 @@
 
 
 
-  "laqueus_dev_time": "2 недели (2022 г)",
+  "laqueus_work_time": "2 недели (2022 г)",
 
   "laqueus_description": "Мой первый проект! Разрабатывал вместе с друзьями, чтобы опробовать свои силы. Изначально задумывалась как раннер, при разработке появились элементы головоломки.",
   "laqueus_key_contributions": [

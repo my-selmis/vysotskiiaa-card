@@ -1511,7 +1511,7 @@ body::-webkit-scrollbar-thumb:hover,
   body::-webkit-scrollbar-button { height: 60px; }
 
   /* в модалке отступ по краям меньше: она ниже страницы, 60px съели бы почти всю дорожку */
-  .project-modal-body::-webkit-scrollbar-button { height: 20px; }
+  /* .project-modal-body::-webkit-scrollbar-button { height: 20px; } */
 }
 
 
@@ -1799,7 +1799,7 @@ video.pm-shot {
 
 .pm-facts > div {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.9fr);
   border-bottom: 1px solid var(--jet);
 }
 
